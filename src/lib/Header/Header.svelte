@@ -46,6 +46,7 @@
   div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: var(--width, 100%);
     margin-inline: auto;
     padding-inline: 1rem;
