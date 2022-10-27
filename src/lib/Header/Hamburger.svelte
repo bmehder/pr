@@ -13,12 +13,15 @@
 </svelte:head>
 
 {#if $isOpen}
-  <i class="fa-solid fa-2x fa-x" on:click on:keypress />
+  <i class="fa-solid fa-2x fa-x" class:isOpen={$isOpen} on:click on:keypress />
 {:else}
   <i class="fa fa-2x fa-bars" on:click on:keypress />
 {/if}
 
 <style>
+  i.isOpen {
+    padding-top: 0.5rem;
+  }
   @media screen and (min-width: 600px) {
     i {
       display: none;

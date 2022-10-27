@@ -55,5 +55,8 @@
     div {
       padding-inline: 2rem;
     }
+    .isOpen div {
+      align-items: unset;
+    }
   }
 </style>
