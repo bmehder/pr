@@ -9,7 +9,7 @@
   <ul>
     <li><a on:click={handleClick} href="/">Home</a></li>
     <li><a on:click={handleClick} href="/about">About</a></li>
-    <li><a on:click={handleClick} href="/blog">Blog</a></li>
+    <li><a on:click={handleClick} href="/blog" data-sveltekit-prefetch>Blog</a></li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
   </ul>
 </nav>
@@ -38,9 +38,6 @@
   }
   a:hover {
     text-decoration: underline;
-  }
-  a.active {
-    color: var(--light);
   }
   @media screen and (max-width: 600px) {
     nav {

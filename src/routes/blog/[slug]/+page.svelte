@@ -9,14 +9,16 @@
   }
   const date = new Date(data.items[0].date)
   console.log(data)
+
+  const src =
+    data.items[0]._embedded['wp:featuredmedia'][0].media_details.sizes.large
+      ?.source_url
 </script>
 
 <article>
-  <img
-    src={data.items[0]._embedded['wp:featuredmedia'][0].media_details.sizes.large
-      ?.source_url}
-    alt={data.items[0].title.rendered}
-  />
+  {#if src}
+    <img {src} alt={data.items[0].title.rendered} />
+  {/if}
   <h1>{@html data.items[0].title.rendered}</h1>
   <p><strong>Date:</strong> {date.toLocaleDateString('en-US', dateOptions)}</p>
   <p>

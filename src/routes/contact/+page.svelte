@@ -1,0 +1,43 @@
+<script lang="ts">
+  import Form from './Form.svelte'
+</script>
+
+<svelte:head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</svelte:head>
+
+<Form />
+
+<div>
+  <h2>Company Info</h2>
+  <p>
+    Mr. Tom Foolery<br />
+    1600 Shenanigans Ln<br />
+    New York, NY 10032<br />
+  </p>
+  <h2>Phone</h2>
+  <p>+1 (800) 867-5309</p>
+  <h2>Socials</h2>
+  <ul>
+    <li><i class="fa-brands fa-2x fa-facebook" /></li>
+    <li><i class="fa-brands fa-2x fa-twitter" /></li>
+    <li><i class="fa-brands fa-2x fa-linkedin" /></li>
+    <li><i class="fa-brands fa-2x fa-instagram" /></li>
+  </ul>
+</div>
+
+<style>
+  ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    list-style-type: none;
+    color: #323232;
+  }
+</style>
