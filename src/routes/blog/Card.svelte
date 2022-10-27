@@ -3,7 +3,7 @@
 </script>
 
 <article>
-  <a href="/blog/{item.slug}"
+  <a href="/blog/{item.slug}" data-sveltekit-prefetch
     ><img
       src={item._embedded['wp:featuredmedia'][0].media_details.sizes.medium_square
         ?.source_url}
@@ -11,7 +11,11 @@
     /></a
   >
   <div>
-    <h2><a href="/blog/{item.slug}">{@html item.title.rendered}</a></h2>
+    <h2>
+      <a href="/blog/{item.slug}" data-sveltekit-prefetch
+        >{@html item.title.rendered}</a
+      >
+    </h2>
     {@html item.excerpt.rendered}
   </div>
 </article>
