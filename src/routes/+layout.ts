@@ -1,3 +1,5 @@
+export const prerender = true
+
 export function load() {
   return {
     slides: [
@@ -24,5 +26,3 @@ export function load() {
     ],
   }
 }
-
-export const prerender = true
