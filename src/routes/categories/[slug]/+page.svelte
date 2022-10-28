@@ -2,7 +2,6 @@
   import Card from '../../blog/Card.svelte'
 
   export let data
-  console.log(data)
 </script>
 
 <h1>{data.items[0]._embedded['wp:term'][0][0].name}</h1>
