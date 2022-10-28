@@ -36,7 +36,7 @@
   main {
     width: 100%;
     max-width: 1100px;
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     margin-inline: auto;
     margin-bottom: 2rem;
   }

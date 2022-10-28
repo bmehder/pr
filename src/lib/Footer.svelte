@@ -20,7 +20,7 @@
     padding-block: 2rem;
     max-width: var(--width, 100%);
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: 2rem;
   }
   p {
     margin: 0;
