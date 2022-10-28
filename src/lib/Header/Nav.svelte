@@ -1,7 +1,13 @@
 <script>
   import { isOpen } from './store'
 
-  const handleClick = () => ($isOpen = false)
+  const handleClick = async () => ($isOpen = false)
+
+  $: if ($isOpen) {
+    document.body.style.position = 'fixed'
+  } else {
+    document.body.style.position = 'relative'
+  }
 </script>
 
 <nav class:isOpen={$isOpen}>
