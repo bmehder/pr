@@ -2,15 +2,14 @@
   import Card from '../../blog/Card.svelte'
 
   export let data
+  console.log(data)
 </script>
 
-<h1>By {data.items[0]?._embedded.author[0].name}</h1>
+<h1>{data.items[0]._embedded['wp:term'][0][0].name}</h1>
 <section>
-  {#if Array.isArray(data.items)}
-    {#each data.items as item}
-      <Card {item} />
-    {/each}
-  {/if}
+  {#each data.items as item}
+    <Card {item} />
+  {/each}
 </section>
 
 <style>
