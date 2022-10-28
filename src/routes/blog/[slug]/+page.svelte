@@ -22,7 +22,10 @@
   <h1>{@html data.items[0].title.rendered}</h1>
   <p><strong>Date:</strong> {date.toLocaleDateString('en-US', dateOptions)}</p>
   <p>
-    <strong>Author:</strong> <a href="/">{data.items[0]._embedded.author[0].name}</a>
+    <strong>Author:</strong>
+    <a href="/authors/{data.items[0]._embedded.author[0].id}"
+      >{data.items[0]._embedded.author[0].name}</a
+    >
   </p>
 
   <div>{@html data.items[0].content.rendered}</div>
