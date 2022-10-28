@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Card from '../../Blog/Card.svelte'
+  import Card from '../../blog/Card.svelte'
   export let data
 
   $: console.log(data)
