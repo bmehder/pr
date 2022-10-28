@@ -4,7 +4,6 @@
 
   import Nav from './Nav.svelte'
   import Hamburger from './Hamburger.svelte'
-  import BackToTop from './BackToTop.svelte'
 
   const BREAKPOINT = 600
 

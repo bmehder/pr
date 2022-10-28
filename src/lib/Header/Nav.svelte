@@ -1,12 +1,8 @@
 <script>
   import { isOpen } from './store'
 
-  const handleClick = async () => ($isOpen = false)
-
-  $: if ($isOpen) {
-    document.body.style.position = 'fixed'
-  } else {
-    document.body.style.position = 'relative'
+  const handleClick = async () => {
+    $isOpen = false
   }
 </script>
 
