@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Home</title>
+</svelte:head>
+
 <h1>Home</h1>
 
 <h2>Heading One</h2>

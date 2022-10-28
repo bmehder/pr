@@ -14,6 +14,10 @@
       ?.source_url
 </script>
 
+<svelte:head>
+  <title>Blog - {data.items[0].title.rendered}</title>
+</svelte:head>
+
 <article>
   {#if src}
     <img {src} alt={data.items[0].title.rendered} />

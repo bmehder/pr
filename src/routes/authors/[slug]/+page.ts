@@ -1,12 +1,12 @@
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
-  const res = await fetch(
+  const usersRes = await fetch(
     `https://sprucehealthgroup.com/wp-json/wp/v2/users?slug=${params.slug}`
   )
-  const data = await res.json()
+  const usersData = await usersRes.json()
 
   const authorRes = await fetch(
-    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?author=${data[0].id}&_embed`
+    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?author=${usersData[0].id}&_embed`
   )
 
   const items = await authorRes.json()

@@ -1,10 +1,16 @@
 <script lang="ts">
-  import Card from '../../blog/Card.svelte'
+  import Card from '$lib/Card.svelte'
 
   export let data
+
+  const name = data.items[0]?._embedded.author[0].name
 </script>
 
-<h1>By {data.items[0]?._embedded.author[0].name}</h1>
+<svelte:head>
+  <title>Author - {name}</title>
+</svelte:head>
+
+<h1>By {name}</h1>
 <section>
   {#if Array.isArray(data.items)}
     {#each data.items as item}

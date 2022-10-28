@@ -1,7 +1,10 @@
 <script lang="ts">
   export let data
-  console.log(data)
 </script>
+
+<svelte:head>
+  <title>Authors</title>
+</svelte:head>
 
 <h1>Authors</h1>
 

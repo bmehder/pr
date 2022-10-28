@@ -1,10 +1,16 @@
 <script lang="ts">
-  import Card from '../../blog/Card.svelte'
+  import Card from '$lib/Card.svelte'
 
   export let data
+
+  const name = data.items[0]._embedded['wp:term'][0][0].name
 </script>
 
-<h1>{data.items[0]._embedded['wp:term'][0][0].name}</h1>
+<svelte:head>
+  <title>Categories - {name}</title>
+</svelte:head>
+
+<h1>{name}</h1>
 <section>
   {#each data.items as item}
     <Card {item} />

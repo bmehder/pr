@@ -1,5 +1,5 @@
 /** @type {import('./$types').PageLoad} */
-export async function load({ fetch, params }) {
+export async function load({ fetch }) {
   const res = await fetch(
     `https://sprucehealthgroup.com/wp-json/wp/v2/users?exclude=1,2,4`
   )

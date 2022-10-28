@@ -10,6 +10,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <title>Contact</title>
 </svelte:head>
 
 <Form />

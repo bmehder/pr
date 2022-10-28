@@ -1,10 +1,10 @@
 <script>
-  const date = new Date().getFullYear()
+  const year = new Date().getFullYear()
 </script>
 
 <footer>
   <div>
-    <p>Copyright © {date} Tom Foolery. All rights reserved.</p>
+    <p>Copyright © {year} Tom Foolery. All rights reserved.</p>
   </div>
 </footer>
 
