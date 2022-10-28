@@ -12,35 +12,33 @@
   const src =
     data.items[0]._embedded['wp:featuredmedia'][0].media_details.sizes.large
       ?.source_url
+  const title = data.items[0].title.rendered
+  const authorSlug = data.items[0]._embedded.author[0].slug
+  const authorName = data.items[0]._embedded.author[0].name
+  const content = data.items[0].content.rendered
+  const categories = data.items[0]._embedded['wp:term'][0]
 </script>
 
 <svelte:head>
-  <title>Blog - {data.items[0].title.rendered}</title>
+  <title>Blog - {title}</title>
 </svelte:head>
 
 <article>
-  {#if src}
-    <img {src} alt={data.items[0].title.rendered} />
-  {/if}
-  <h1>{@html data.items[0].title.rendered}</h1>
-  <p><strong>Date:</strong> {date.toLocaleDateString('en-US', dateOptions)}</p>
+  <h1>{@html title}</h1>
   <p>
-    <strong>Author:</strong>
-    <a href="/authors/{data.items[0]._embedded.author[0].slug}"
-      >{data.items[0]._embedded.author[0].name}</a
-    >
-  </p>
-  <p>
-    <strong>Categories:</strong>
-    {#each data.items[0]._embedded['wp:term'][0] as category, index}
-      <a href="/categories/{category.slug}">{category.name}</a>{index + 1 <
-      data.items[0]._embedded['wp:term'][0].length
-        ? ', '
-        : ''}
+    Author:
+    <a href="/authors/{authorSlug}">{authorName}</a>
+    <span>&#124;</span> Categories:
+    {#each categories as category, index}
+      {@const separator = index + 1 < categories.length ? ', ' : ''}
+      <a href="/categories/{category.slug}">{category.name}</a>{separator}
     {/each}
   </p>
-
-  <div>{@html data.items[0].content.rendered}</div>
+  <p>Published on {date.toLocaleDateString('en-US', dateOptions)}</p>
+  {#if src}
+    <img {src} alt={title} />
+  {/if}
+  <div>{@html content}</div>
 </article>
 
 <style>
@@ -49,5 +47,15 @@
   }
   img {
     width: 100%;
+    margin-block: 2rem;
+  }
+  h1 {
+    line-height: 1.25;
+  }
+  p {
+    margin-top: 0rem;
+  }
+  span {
+    padding-inline: 0.5rem;
   }
 </style>

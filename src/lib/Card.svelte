@@ -1,6 +1,14 @@
 <script lang="ts">
   export let item
 
+  const dateOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+  const date = new Date(item.date)
+
   const slug = item.slug
   const src =
     item._embedded['wp:featuredmedia'][0].media_details.sizes.medium_square
@@ -19,6 +27,24 @@
     <h2>
       <a href="/blog/{slug}" data-sveltekit-prefetch>{@html title}</a>
     </h2>
+    <p>
+      {date.toLocaleDateString('en-US', dateOptions)}
+    </p>
+    <p>
+      Author:
+      <a href="/authors/{item._embedded.author[0].slug}"
+        >{item._embedded.author[0].name}</a
+      >
+    </p>
+    <p>
+      Categories:
+      {#each item._embedded['wp:term'][0] as category, index}
+        <a href="/categories/{category.slug}">{category.name}</a>{index + 1 <
+        item._embedded['wp:term'][0].length
+          ? ', '
+          : ''}
+      {/each}
+    </p>
     {@html excerpt}
   </div>
 </article>
@@ -32,6 +58,11 @@
   }
   h2 {
     margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+  p {
+    margin-top: 0.25rem;
   }
   img {
     width: 100%;
