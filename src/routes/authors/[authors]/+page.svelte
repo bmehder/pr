@@ -1,5 +1,6 @@
 <script lang="ts">
   import Card from '../../blog/Card.svelte'
+
   export let data
 
   $: console.log(data)
