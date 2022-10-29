@@ -12,6 +12,7 @@
     <li><a on:click={handleClick} href="/">Home</a></li>
     <li><a on:click={handleClick} href="/about">About</a></li>
     <li><a on:click={handleClick} href="/blog" data-sveltekit-prefetch>Blog</a></li>
+    <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
   </ul>
 </nav>
