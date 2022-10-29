@@ -4,8 +4,10 @@ export const prerender = true
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch }: RequestEvent) {
-  const res = await fetch(`https://sprucehealthgroup.com/wp-json/wp/v2/posts?_embed`)
-  const items = await res.json()
+  const postsRes = await fetch(
+    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?per_page=100&_embed`
+  )
+  const items = await postsRes.json()
 
   const slides = [
     {

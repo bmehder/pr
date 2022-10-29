@@ -1,3 +1,5 @@
+// Moved to root layout
+
 // import type { RequestEvent } from '@sveltejs/kit'
 
 // /** @type {import('./$types').PageLoad} */
