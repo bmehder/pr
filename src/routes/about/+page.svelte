@@ -1,3 +1,10 @@
+<script lang="ts">
+  import type { PageData } from './$types'
+
+  import Tabs from '$lib/Tabs.svelte'
+  export let data: PageData
+</script>
+
 <svelte:head>
   <title>About</title>
 </svelte:head>
@@ -17,6 +24,8 @@
   impedit accusantium. Delectus expedita beatae dignissimos rem recusandae sint
   corporis animi maxime vitae!
 </p>
+
+<Tabs tabs={data.tabs} --color="var(--light)" />
 
 <h2>Heading Two</h2>
 <p>
