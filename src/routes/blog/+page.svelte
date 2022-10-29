@@ -1,6 +1,8 @@
 <script lang="ts">
+  import type { PageData } from './$types'
+
   import Card from '$lib/Card.svelte'
-  export let data
+  export let data: PageData
 </script>
 
 <svelte:head>

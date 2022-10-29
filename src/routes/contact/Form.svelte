@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const handleClick = () => alert('Just txt me!')
 </script>
 

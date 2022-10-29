@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { isShowBackToTop } from './store'
 
   const handleClick = () => {

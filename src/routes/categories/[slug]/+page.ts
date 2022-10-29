@@ -1,5 +1,7 @@
+import type { RequestEvent } from '@sveltejs/kit'
+
 /** @type {import('./$types').PageLoad} */
-export async function load({ fetch, params }) {
+export async function load({ fetch, params }: RequestEvent) {
   const slugRes = await fetch(
     `https://sprucehealthgroup.com/wp-json/wp/v2/categories?slug=${params.slug}`
   )

@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { PageData } from './$types'
+
   import Card from '$lib/Card.svelte'
 
-  export let data
+  export let data: PageData
 
   const name = data.items[0]?._embedded.author[0].name
 </script>
