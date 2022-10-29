@@ -32,17 +32,16 @@
     </p>
     <p>
       Author:
-      <a href="/authors/{item._embedded.author[0].slug}"
+      <a href="/authors/{item._embedded.author[0].slug}" data-sveltekit-prefetch
         >{item._embedded.author[0].name}</a
       >
     </p>
     <p>
       Categories:
       {#each item._embedded['wp:term'][0] as category, index}
-        <a href="/categories/{category.slug}">{category.name}</a>{index + 1 <
-        item._embedded['wp:term'][0].length
-          ? ', '
-          : ''}
+        <a href="/categories/{category.slug}" data-sveltekit-prefetch
+          >{category.name}</a
+        >{index + 1 < item._embedded['wp:term'][0].length ? ', ' : ''}
       {/each}
     </p>
     {@html excerpt}
