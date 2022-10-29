@@ -4,10 +4,9 @@
   import Faq from './Faq.svelte'
 
   export let data: PageData
-
-  export const prerender = true
 </script>
 
+<h1>Frequently Asked Questions</h1>
 <div>
   {#each data.sortedFaqs as category}
     <h2>{category.name}</h2>

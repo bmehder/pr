@@ -1,9 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit'
-type Cat = { id: string }
+type Category = { id: string; name: string }
 type SortedFaq = { name: string; faqs: [] }
-type CatName = { name: string }
-
-export const prerender = true
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch }: RequestEvent) {
@@ -14,16 +11,16 @@ export async function load({ fetch }: RequestEvent) {
   const faqCatsRes = await fetch(`${BASE_URL}${FAQ_CATS}`)
   const faqCats = await faqCatsRes.json()
 
-  const catIds = faqCats.map((cat: Cat) => cat.id)
+  const catIds = faqCats.map((cat: Category) => cat.id)
 
-  const getFaqsByCats = catIds.map((id: number) =>
+  const getFaqsByCatsId = catIds.map((id: number) =>
     fetch(`${BASE_URL}${FAQS_BY_CAT}=${id}`)
   )
-  const faqsByCatsRes = await Promise.all(getFaqsByCats)
+  const faqsByCatsRes = await Promise.all(getFaqsByCatsId)
   const faqsByCats = await Promise.all(faqsByCatsRes.map(res => res.json()))
 
   const sortedFaqs = faqCats.reduce(
-    (acc: SortedFaq[], item: CatName, index: number) => {
+    (acc: SortedFaq[], item: Category, index: number) => {
       acc = [...acc, { name: item.name, faqs: faqsByCats[index] }]
       return acc
     },
