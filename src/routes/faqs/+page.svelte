@@ -4,6 +4,8 @@
   import Faq from './Faq.svelte'
 
   export let data: PageData
+
+  export const prerender = true
 </script>
 
 <div>
