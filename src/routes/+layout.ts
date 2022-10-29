@@ -6,11 +6,13 @@ export const prerender = true
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch }: RequestEvent) {
+  // Posts
   const postsRes = await fetch(
     `https://sprucehealthgroup.com/wp-json/wp/v2/posts?per_page=100&_embed`
   )
   const items = await postsRes.json()
 
+  // Faqs
   const BASE_URL = 'https://sprucehealthgroup.com/wp-json/wp/v2/'
   const FAQ_CATS = 'faq-cats'
   const FAQS_BY_CAT = 'faqs?faq-cats='
@@ -34,6 +36,7 @@ export async function load({ fetch }: RequestEvent) {
     []
   )
 
+  // Slides for Hero
   const slides = [
     {
       src: 'img/plant.png',
