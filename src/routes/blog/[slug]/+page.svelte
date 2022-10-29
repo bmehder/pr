@@ -29,11 +29,13 @@
   <h1>{@html title}</h1>
   <p>
     Author:
-    <a href="/authors/{authorSlug}">{authorName}</a>
+    <a href="/authors/{authorSlug}" data-sveltekit-prefetch>{authorName}</a>
     <span>&#124;</span> Categories:
     {#each categories as category, index}
       {@const separator = index + 1 < categories.length ? ', ' : ''}
-      <a href="/categories/{category.slug}">{category.name}</a>{separator}
+      <a href="/categories/{category.slug}" data-sveltekit-prefetch
+        >{category.name}</a
+      >{separator}
     {/each}
   </p>
   <p>Published on {date.toLocaleDateString('en-US', dateOptions)}</p>
