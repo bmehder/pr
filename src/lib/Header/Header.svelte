@@ -29,7 +29,6 @@
   </div>
 </header>
 
-<!-- <BackToTop /> -->
 <style>
   header {
     padding-block: 2rem;

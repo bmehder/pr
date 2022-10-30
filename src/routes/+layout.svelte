@@ -20,10 +20,10 @@
 
   <main>
     <slot />
-    <BackToTop />
+    <BackToTop --background="var(--light)" />
   </main>
 
-  <Footer --background="#323232" --color="white" --width="1100px" />
+  <Footer --background="#323232" --color="var(--white)" --width="1100px" />
 </div>
 
 <style>

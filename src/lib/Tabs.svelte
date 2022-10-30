@@ -43,6 +43,7 @@
   li {
     list-style-type: none;
     padding: 1rem;
+    cursor: pointer;
   }
   .active {
     background: var(--color, tomato);

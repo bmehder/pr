@@ -6,7 +6,12 @@
   export let data: PageData
 </script>
 
+<svelte:head>
+  <title>FAQs</title>
+</svelte:head>
+
 <h1>Frequently Asked Questions</h1>
+
 <div>
   {#each data.sortedFaqs as category}
     <h2>{category.name}</h2>
