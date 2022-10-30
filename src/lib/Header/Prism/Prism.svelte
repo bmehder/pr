@@ -38,6 +38,7 @@
 <style>
   div {
     margin-top: 1.5rem;
+    width: 100%;
   }
   pre {
     position: relative;

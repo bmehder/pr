@@ -72,10 +72,10 @@
   corporis animi maxime vitae!
 </p>
 
-<h2>Prisvm Components</h2>
-<Prism code="const copyText = str => navigator.clipboard.writeText(str)" />
-<Prism code="const enterDesignMode = () => document.designMode = 'on'" />
+<!-- <h2>Prisvm Components</h2>
 
+<Prism code="const copyText = str => navigator.clipboard.writeText(str)" />
+<Prism code="const enterDesignMode = () => document.designMode = 'on'" /> -->
 <style>
   aside {
     max-width: 50%;
