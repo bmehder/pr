@@ -1,6 +1,7 @@
 <script lang="ts">
   import { viewport } from '../actions'
   import { isOpen, isShowBackToTop } from './store'
+  import { browser } from '$app/environment'
 
   import Nav from './Nav.svelte'
   import Hamburger from './Hamburger.svelte'
@@ -13,6 +14,9 @@
   const toggleNav = () => ($isOpen = !$isOpen)
 
   $: innerWidth > BREAKPOINT && closeNav()
+
+  $: if (browser && $isOpen) document.body.style.position = 'fixed'
+  $: if (browser && !$isOpen) document.body.style.position = 'relative'
 </script>
 
 <svelte:window bind:innerWidth />
