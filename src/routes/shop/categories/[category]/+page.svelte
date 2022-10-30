@@ -1,10 +1,15 @@
-<script>
-  import ProductCard from './ProductCard.svelte'
+<script lang="ts">
+  import ProductCard from '../../ProductCard.svelte'
 
   export let data
+
+  const toProperCase = str => str[0].toUpperCase() + str.slice(1)
+  const categoryName = toProperCase(data.items.products[0].category)
+
+  console.log(data)
 </script>
 
-<h1>Products</h1>
+<h1>{categoryName}</h1>
 <div>
   {#each data.items.products as product}
     <ProductCard {product} />

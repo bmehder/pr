@@ -33,7 +33,7 @@
     <span>&#124;</span> Categories:
     {#each categories as category, index}
       {@const separator = index + 1 < categories.length ? ', ' : ''}
-      <a href="/categories/{category.slug}" data-sveltekit-prefetch
+      <a href="/blog/categories/{category.slug}" data-sveltekit-prefetch
         >{category.name}</a
       >{separator}
     {/each}

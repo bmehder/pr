@@ -3,7 +3,7 @@
 
   import Tabs from '$lib/Tabs.svelte'
   import SvelteTube from '$lib/SvelteTube.svelte'
-  // import Prism from '$lib/Prism/Prism.svelte'
+  import Prism from '$lib/Prism/Prism.svelte'
 
   export let data: PageData
 </script>
@@ -72,10 +72,11 @@
   corporis animi maxime vitae!
 </p>
 
-<!-- <h2>Prisvm Components</h2>
+<h2>Prisvm Components</h2>
 
 <Prism code="const copyText = str => navigator.clipboard.writeText(str)" />
-<Prism code="const enterDesignMode = () => document.designMode = 'on'" /> -->
+<Prism code="const enterDesignMode = () => document.designMode = 'on'" />
+
 <style>
   aside {
     max-width: 50%;

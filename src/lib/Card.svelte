@@ -39,7 +39,7 @@
     <p>
       Categories:
       {#each item._embedded['wp:term'][0] as category, index}
-        <a href="/categories/{category.slug}" data-sveltekit-prefetch
+        <a href="/blog/categories/{category.slug}" data-sveltekit-prefetch
           >{category.name}</a
         >{index + 1 < item._embedded['wp:term'][0].length ? ', ' : ''}
       {/each}
