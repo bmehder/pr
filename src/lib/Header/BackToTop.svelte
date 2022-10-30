@@ -12,7 +12,6 @@
 </script>
 
 <div class:visible={$isShowBackToTop} on:click={handleClick} on:keypress>
-  <!-- <i class="fa-solid fa-3x fa-circle-arrow-up" on:click={handleClick} on:keypress /> -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -42,7 +41,6 @@
   }
   svg {
     width: 3rem;
-    border-radius: 50%;
     color: var(--background, white);
     transition: scale 100ms ease-in-out;
   }

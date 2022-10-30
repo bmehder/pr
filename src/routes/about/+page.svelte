@@ -3,7 +3,7 @@
 
   import Tabs from '$lib/Tabs.svelte'
   import SvelteTube from '$lib/SvelteTube.svelte'
-  import Prism from '$lib/Prism/Prism.svelte'
+  // import Prism from '$lib/Prism/Prism.svelte'
 
   export let data: PageData
 </script>
