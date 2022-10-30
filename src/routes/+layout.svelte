@@ -39,5 +39,6 @@
     padding-block: 2rem 4rem;
     padding-inline: 2rem;
     margin-inline: auto;
+    overflow: hidden;
   }
 </style>

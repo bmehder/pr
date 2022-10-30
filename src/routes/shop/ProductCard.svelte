@@ -2,7 +2,7 @@
   export let product
 
   const nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
-  console.log(product)
+  // console.log(product)
 </script>
 
 <svelte:head>
@@ -10,7 +10,8 @@
 </svelte:head>
 
 <article>
-  <img src={product.thumbnail} alt={product.title} />
+  <a href="/shop/{product.id}"><img src={product.thumbnail} alt={product.title} /></a
+  >
   <div>
     <h2>{product.title}</h2>
     <h3>{nf.format(product.price)}</h3>
