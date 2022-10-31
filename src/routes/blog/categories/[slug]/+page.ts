@@ -2,6 +2,11 @@ import type { RequestEvent } from '@sveltejs/kit'
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }: RequestEvent) {
+  const categoryName = params.slug
+    ?.split('-')
+    .map(str => str[0].toUpperCase() + str.slice(1))
+    .join(' ')
+
   const slugRes = await fetch(
     `https://sprucehealthgroup.com/wp-json/wp/v2/categories?slug=${params.slug}`
   )
@@ -13,5 +18,5 @@ export async function load({ fetch, params }: RequestEvent) {
 
   const items = await catRes.json()
 
-  return { items }
+  return { categoryName, items }
 }

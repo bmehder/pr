@@ -9,6 +9,8 @@
   import Footer from '$lib/Footer.svelte'
 
   export let data: PageData
+
+  console.log(data)
 </script>
 
 <div class="wrapper">

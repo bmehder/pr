@@ -4,17 +4,13 @@
   import Card from '$lib/Card.svelte'
 
   export let data: PageData
-
-  const name = data.items[0]._embedded['wp:term'][0][0].name
-
-  console.log(data)
 </script>
 
 <svelte:head>
-  <title>Categories - {name}</title>
+  <title>Category - {data.categoryName}</title>
 </svelte:head>
 
-<h1>Todo: Get dynamic category name</h1>
+<h1>Category - {data.categoryName}</h1>
 <section>
   {#each data.items as item}
     <Card {item} />

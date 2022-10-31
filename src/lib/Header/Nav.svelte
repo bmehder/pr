@@ -6,6 +6,7 @@
   }
 </script>
 
+<!-- https://github.com/sveltejs/kit/issues/923 -->
 <nav class:isOpen={$isOpen}>
   <h1><a on:click={handleClick} href="/">Logo</a></h1>
   <ul>
