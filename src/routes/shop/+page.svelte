@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
+  import type { PageData } from './$types'
+
   import ProductCard from './ProductCard.svelte'
 
-  export let data
+  export let data: PageData
 </script>
 
 <h1>Products</h1>
