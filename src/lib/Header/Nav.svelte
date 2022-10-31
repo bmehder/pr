@@ -6,15 +6,33 @@
   }
 </script>
 
-<!-- https://github.com/sveltejs/kit/issues/923 -->
 <nav class:isOpen={$isOpen}>
   <h1><a on:click={handleClick} href="/">Logo</a></h1>
   <ul>
     <li><a on:click={handleClick} href="/">Home</a></li>
     <li><a on:click={handleClick} href="/about">About</a></li>
-    <li><a on:click={handleClick} href="/blog" data-sveltekit-prefetch>Blog</a></li>
+    <li>
+      <a on:click={handleClick} href="/blog" data-sveltekit-prefetch>Blog</a>
+      <ul>
+        <li>
+          <a on:click={handleClick} href="/blog/categories" data-sveltekit-prefetch
+            >Categories</a
+          >
+        </li>
+        <li>
+          <a on:click={handleClick} href="/blog/authors" data-sveltekit-prefetch
+            >Authors</a
+          >
+        </li>
+      </ul>
+    </li>
     <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
-    <li><a on:click={handleClick} href="/shop">Shop</a></li>
+    <li>
+      <a on:click={handleClick} href="/shop">Shop</a>
+      <ul>
+        <li><a href="/shop/categories" on:click={handleClick}>Categories</a></li>
+      </ul>
+    </li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
   </ul>
 </nav>
@@ -35,6 +53,29 @@
     gap: 2rem;
     margin: 0;
     padding-inline: 0;
+  }
+  li {
+    position: relative;
+  }
+  li:hover ul {
+    display: block;
+  }
+  ul ul {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-left: -1.5rem;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+    background-color: #323232;
+    z-index: 1;
+  }
+  ul ul li {
+    padding-bottom: 1rem;
+  }
+  ul ul li:last-of-type {
+    padding-bottom: 0.5rem;
   }
   a {
     cursor: pointer;
@@ -60,6 +101,15 @@
     .isOpen li {
       padding-bottom: 1rem;
       border-bottom: 2px solid white;
+    }
+    ul ul {
+      position: relative;
+      gap: 1rem;
+      margin-left: 0.25rem;
+      padding-bottom: 0;
+    }
+    .isOpen ul ul li {
+      border-bottom: none;
     }
   }
 </style>

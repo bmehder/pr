@@ -27,7 +27,7 @@
   <pre>
 <code class="language-js">
 <br />
-      {code}
+    {code}
 </code>
 <button on:click={handleClick}>
   {#if isCopied}<CheckIcon />{:else}<CopyIcon />{/if}

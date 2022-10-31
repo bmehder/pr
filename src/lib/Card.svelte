@@ -1,5 +1,16 @@
 <script lang="ts">
-  export let item
+  type Item = {
+    date: Date
+    slug: string
+    src: string
+    title: {
+      rendered: string
+    }
+    excerpt: {
+      rendered: string
+    }
+  }
+  export let item: Item
 
   const dateOptions = {
     weekday: 'long',

@@ -75,6 +75,7 @@
 <h2>Prisvm Components</h2>
 
 <Prism code="const copyText = str => navigator.clipboard.writeText(str)" />
+
 <Prism code="const enterDesignMode = () => document.designMode = 'on'" />
 
 <style>
