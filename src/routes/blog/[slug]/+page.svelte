@@ -29,7 +29,7 @@
   <h1>{@html title}</h1>
   <p>
     Author:
-    <a href="/authors/{authorSlug}" data-sveltekit-prefetch>{authorName}</a>
+    <a href="/blog/authors/{authorSlug}" data-sveltekit-prefetch>{authorName}</a>
     <span>&#124;</span> Categories:
     {#each categories as category, index}
       {@const separator = index + 1 < categories.length ? ', ' : ''}

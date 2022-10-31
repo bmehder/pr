@@ -32,7 +32,7 @@
     </p>
     <p>
       Author:
-      <a href="/authors/{item._embedded.author[0].slug}" data-sveltekit-prefetch
+      <a href="/blog/authors/{item._embedded.author[0].slug}" data-sveltekit-prefetch
         >{item._embedded.author[0].name}</a
       >
     </p>
