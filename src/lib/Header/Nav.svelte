@@ -28,9 +28,13 @@
     </li>
     <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
     <li>
-      <a on:click={handleClick} href="/shop">Shop</a>
+      <a on:click={handleClick} href="/shop" data-sveltekit-prefetch>Shop</a>
       <ul>
-        <li><a href="/shop/categories" on:click={handleClick}>Categories</a></li>
+        <li>
+          <a on:click={handleClick} href="/shop/categories" data-sveltekit-prefetch
+            >Categories</a
+          >
+        </li>
       </ul>
     </li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
