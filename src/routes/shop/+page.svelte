@@ -6,7 +6,6 @@
   export let data: PageData
 </script>
 
-<h1>Products</h1>
 <div>
   {#each data.items.products as product}
     <ProductCard {product} />

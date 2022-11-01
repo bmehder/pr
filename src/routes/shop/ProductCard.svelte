@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let product
+  import { Format } from '$lib/utils'
 
-  const nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
+  export let product
 </script>
 
 <svelte:head>
@@ -13,9 +13,11 @@
   >
   <div>
     <h2><a href="/shop/{product.id}">{product.title}</a></h2>
-    <h3>{nf.format(product.price)}</h3>
+    <h3>{Format.dollar(product.price)}</h3>
     <p>
-      Category: <a href="/shop/categories/{product.category}">{product.category}</a>
+      Category: <a href="/shop/categories/{product.category}"
+        >{Format.toProperCase(product.category)}</a
+      >
     </p>
     <p>{product.description}</p>
   </div>

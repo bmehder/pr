@@ -1,13 +1,11 @@
 <script lang="ts">
   import type { PageData } from './$types'
   import ProductCard from '../../ProductCard.svelte'
+  import { Format } from '$lib/utils'
 
   export let data: PageData
 
-  const toProperCase = (str: string) => str[0].toUpperCase() + str.slice(1)
-  const categoryName = toProperCase(data.items.products[0].category)
-
-  console.log(data)
+  const categoryName = Format.toProperCase(data.items.products[0].category)
 </script>
 
 <h1>{categoryName}</h1>

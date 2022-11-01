@@ -1,11 +1,8 @@
 <script lang="ts">
+  import { Format } from '$lib/utils'
   import type { PageData } from './$types'
 
   export let data: PageData
-
-  console.log(data)
-
-  const nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
 
   const {
     items: { thumbnail, title, price, brand, category, rating, stock, description },
@@ -18,7 +15,7 @@
   <div>
     <div class="header">
       <button>Buy Now</button>
-      <h2 class="price">{nf.format(price)}</h2>
+      <h2 class="price">{Format.dollar(price)}</h2>
     </div>
   </div>
   <div class="meta">
