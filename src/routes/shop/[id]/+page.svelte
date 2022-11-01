@@ -5,7 +5,17 @@
   export let data: PageData
 
   const {
-    items: { thumbnail, title, price, brand, category, rating, stock, description },
+    items: {
+      thumbnail,
+      title,
+      price,
+      brand,
+      category,
+      id,
+      rating,
+      stock,
+      description,
+    },
   } = data
 </script>
 
@@ -25,7 +35,9 @@
     </div>
     <div>
       <h3>Category</h3>
-      <p><a href="/shop/categories/{category}">{category}</a></p>
+      <p>
+        <a href="/shop/categories/{category}">{Format.toProperCase(category)}</a>
+      </p>
     </div>
     <div>
       <h3>Rating</h3>
@@ -35,6 +47,10 @@
       <h3>Stock</h3>
       <p>{stock}</p>
     </div>
+    <div>
+      <h3>Id</h3>
+      <p>{id}</p>
+    </div>
   </div>
   <h3>Description</h3>
   <p>{description}</p>
@@ -43,7 +59,10 @@
 <style>
   img {
     width: 300px;
+    height: 300px;
+    object-fit: cover;
     margin-block: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
   }
   .header {
     display: flex;
@@ -53,7 +72,7 @@
   }
   .meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
   }
   .meta div {

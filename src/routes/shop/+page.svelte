@@ -15,7 +15,7 @@
 <style>
   div {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     gap: 3rem;
     margin-top: 1.5rem;
   }

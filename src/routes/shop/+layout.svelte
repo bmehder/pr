@@ -1,13 +1,12 @@
 <script lang="ts">
-  import { enhance } from '$app/forms'
   import { page } from '$app/stores'
   import { Format } from '$lib/utils'
 
-  $: slug = $page.routeId?.split('/').at(-1) ?? ''
-  $: pageName = Format.toProperCase(slug)
+  $: pageName = Format.toProperCase($page.routeId?.split('/').at(-1) ?? '')
+  $: isDynamicRoute = pageName === '[id]' || pageName === '[category]'
 </script>
 
-{#if pageName !== '[id]' && pageName !== '[category]'}
+{#if !isDynamicRoute}
   <div class="header">
     <h1>{pageName}</h1>
 

@@ -1,5 +1,7 @@
 <script lang="ts">
   import Form from './Form.svelte'
+
+  export let form
 </script>
 
 <svelte:head>
@@ -13,7 +15,14 @@
   <title>Contact</title>
 </svelte:head>
 
-<Form />
+{#if form?.results}
+  <div>
+    <h3>Information submitted to server</h3>
+    <pre>{JSON.stringify(form?.results, null, 2)}</pre>
+  </div>
+{:else}
+  <Form />
+{/if}
 
 <div>
   <h2>Company Info</h2>
