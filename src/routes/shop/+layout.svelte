@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import { Format } from '$lib/utils'
+  import { enhance } from '$app/forms'
 
   $: pageName = Format.toProperCase($page.routeId?.split('/').at(-1) ?? '')
   $: isDynamicRoute = pageName === '[id]' || pageName === '[category]'
@@ -11,7 +12,7 @@
     <h1>{pageName}</h1>
 
     <div class="search">
-      <form method="POST">
+      <form method="POST" use:enhance>
         <input type="text" name="searchQuery" />
         <input type="submit" value="Search" />
       </form>

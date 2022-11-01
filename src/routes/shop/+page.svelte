@@ -4,12 +4,19 @@
   import ProductCard from './ProductCard.svelte'
 
   export let data: PageData
+  export let form
 </script>
 
 <div>
-  {#each data.items.products as product}
-    <ProductCard {product} />
-  {/each}
+  {#if form}
+    {#each form.items.products as product}
+      <ProductCard {product} />
+    {/each}
+  {:else}
+    {#each data.items.products as product}
+      <ProductCard {product} />
+    {/each}
+  {/if}
 </div>
 
 <style>
