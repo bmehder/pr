@@ -1,9 +1,15 @@
-import type { RequestEvent } from '@sveltejs/kit'
-
 export const prerender = true
+
+import type { RequestEvent } from '@sveltejs/kit'
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch }: RequestEvent) {
+  // Posts
+  const postsRes = await fetch(
+    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?per_page=10&_embed`
+  )
+  const posts = await postsRes.json()
+
   // Faqs
   type Category = { id: string; name: string }
   type Faq = { name: string; faqs: { title: string; content: string }[] }
@@ -28,5 +34,28 @@ export async function load({ fetch }: RequestEvent) {
     return acc
   }, [])
 
-  return { faqs }
+  const slides = [
+    {
+      src: 'img/plant.png',
+      text: 'Hello Slider 1',
+      options: { top: '50%', left: '50%' },
+    },
+    {
+      src: 'img/plant2.png',
+      text: 'Hello Slider 2',
+      options: { top: '50%', left: '50%' },
+    },
+    {
+      src: 'img/plant3.png',
+      text: 'Hello Slider 3',
+      options: { top: '50%', left: '50%' },
+    },
+    {
+      src: 'img/plant4.png',
+      text: 'Hello Slider 4',
+      options: { top: '38%', left: '38%' },
+    },
+  ]
+
+  return { posts, faqs, slides }
 }

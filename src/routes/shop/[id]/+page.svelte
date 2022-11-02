@@ -25,7 +25,7 @@
   <div>
     <div class="header">
       <button>Buy Now</button>
-      <h2 class="price">{Format.dollar(price)}</h2>
+      <h2 class="price">{Format.toDollars(price)}</h2>
     </div>
   </div>
   <div class="meta">

@@ -2,24 +2,24 @@
   import { page } from '$app/stores'
   import { Format } from '$lib/utils'
   import { enhance } from '$app/forms'
-  import { goto } from '$app/navigation'
 
   $: pageName = Format.toProperCase($page.routeId?.split('/').at(-1) ?? '')
-  $: isDynamicRoute = pageName === '[id]' || pageName === '[category]'
+  $: isDynamicRoute = pageName.includes('[')
 </script>
 
-{#if !isDynamicRoute}
-  <div class="header">
+<div class="header">
+  {#if !isDynamicRoute}
     <h1>{pageName}</h1>
-
+  {/if}
+  {#if $page.routeId === '/shop'}
     <div class="search">
-      <form method="POST" use:enhance action="/shop" on:submit={() => goto('/shop')}>
+      <form method="POST" use:enhance action="/shop">
         <input type="text" name="searchQuery" />
         <input type="submit" value="Search" />
       </form>
     </div>
-  </div>
-{/if}
+  {/if}
+</div>
 
 <slot />
 

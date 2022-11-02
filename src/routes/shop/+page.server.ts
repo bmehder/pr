@@ -10,6 +10,7 @@ export const actions = {
 
     const res = await fetch(`https://dummyjson.com/products/search?q=${searchQuery}`)
     const items = await res.json()
+
     return { items }
   },
 }

@@ -1,7 +1,18 @@
 <script lang="ts">
   import { Format } from '$lib/utils'
 
-  export let product
+  type Product = {
+    id: number
+    thumbnail: string
+    title: string
+    price: number
+    category: string
+    description: string
+  }
+
+  export let product: Product
+
+  const { id, thumbnail, title, price, category, description } = product
 </script>
 
 <svelte:head>
@@ -9,17 +20,16 @@
 </svelte:head>
 
 <article>
-  <a href="/shop/{product.id}"><img src={product.thumbnail} alt={product.title} /></a
-  >
+  <a href="/shop/{id}"><img src={thumbnail} alt={title} /></a>
   <div>
-    <h2><a href="/shop/{product.id}">{product.title}</a></h2>
-    <h3>{Format.dollar(product.price)}</h3>
+    <h2><a href="/shop/{id}">{title}</a></h2>
+    <h3>{Format.toDollars(price)}</h3>
     <p>
-      Category: <a href="/shop/categories/{product.category}"
-        >{Format.toProperCase(product.category)}</a
+      Category: <a href="/shop/categories/{category}"
+        >{Format.toProperCase(category)}</a
       >
     </p>
-    <p>{product.description}</p>
+    <p>{description}</p>
   </div>
 </article>
 
