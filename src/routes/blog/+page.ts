@@ -1,6 +1,6 @@
-import type { RequestEvent } from '@sveltejs/kit'
-
 export const prerender = true
+
+import type { RequestEvent } from '@sveltejs/kit'
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch }: RequestEvent) {
