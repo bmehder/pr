@@ -1,5 +1,4 @@
 <h1>Contact</h1>
-
 <div>
   <slot />
 </div>

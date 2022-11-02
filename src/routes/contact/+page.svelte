@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { ActionData } from './$types'
+
   import Form from './Form.svelte'
 
-  export let form
+  export let form: ActionData
 </script>
 
 <svelte:head>
@@ -17,7 +19,7 @@
 
 {#if form?.results}
   <div>
-    <h3>Information submitted to server</h3>
+    <h3>Response to server</h3>
     <pre>{JSON.stringify(form?.results, null, 2)}</pre>
   </div>
 {:else}

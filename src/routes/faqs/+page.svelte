@@ -13,7 +13,7 @@
 <h1>Frequently Asked Questions</h1>
 
 <div>
-  {#each data.sortedFaqs as category}
+  {#each data.faqs as category}
     <h2>{category.name}</h2>
     {#each category.faqs as faq}
       <Faq {faq} --color="black" --background="#f1f1f1" />

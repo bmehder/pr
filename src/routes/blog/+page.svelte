@@ -12,7 +12,7 @@
 <h1>Blog</h1>
 
 <section>
-  {#each data.items as item}
+  {#each data.posts as item}
     <Card {item} />
   {/each}
 </section>

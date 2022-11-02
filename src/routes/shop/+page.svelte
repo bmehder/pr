@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { PageData } from './$types'
+  import type { PageData, ActionData } from './$types'
 
   import ProductCard from './ProductCard.svelte'
 
   export let data: PageData
-  export let form
+  export let form: ActionData
 </script>
 
 <div>

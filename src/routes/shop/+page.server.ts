@@ -1,9 +1,8 @@
-/** @type {import('./$types').Actions} */
+import type { RequestEvent } from '@sveltejs/kit'
 
 export const prerender = false
 
-import type { RequestEvent } from '@sveltejs/kit'
-
+/** @type {import('./$types').Actions} */
 export const actions = {
   default: async ({ request }: RequestEvent) => {
     const formData = await request.formData()
