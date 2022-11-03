@@ -9,9 +9,12 @@
   export let data: PageData
 
   let value = ''
+  let searchQuery = ''
   let searchResults: Products | null
 
   const getSearchResults = async (value: string) => {
+    !value && (searchResults = null)
+    searchQuery = value
     const res = await fetch(`https://dummyjson.com/products/search?q=${value}`)
     const results = await res.json()
 
@@ -22,13 +25,27 @@
     value = ''
     searchResults = null
   }
+
+  const handleKeypress = (evt: KeyboardEvent) => {
+    if (evt.key === 'Enter') {
+      getSearchResults(value)
+    }
+  }
+  $: !value && (searchResults = null)
 </script>
 
 <header class="search">
-  <h1>Shop</h1>
+  {#if searchResults && value}
+    <h1>
+      Search Results for '{searchQuery}'
+      <span on:click={clearSearch} on:keypress>Clear Search</span>
+    </h1>
+  {:else}
+    <h1>Shop</h1>
+  {/if}
   <div>
     <div>
-      <input type="text" bind:value />
+      <input type="text" bind:value on:keypress={handleKeypress} />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -60,12 +77,15 @@
 </div>
 
 <style>
-  header,
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
   header > div {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: 0.5rem;
+    align-items: center;
   }
   input,
   button {
@@ -88,10 +108,31 @@
     border: 2px solid var(--light);
     cursor: pointer;
   }
+  h1 {
+    margin: 0;
+  }
+  h1 span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--light);
+    cursor: pointer;
+  }
+  h1 span:hover {
+    text-decoration: underline;
+  }
   .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     gap: 3rem;
     margin-top: 1.5rem;
+  }
+  @media screen and (max-width: 720px) {
+    header {
+      flex-direction: column;
+    }
+    header div div,
+    input {
+      width: 100%;
+    }
   }
 </style>
