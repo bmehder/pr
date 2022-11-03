@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageData } from './$types'
-  import { browser } from '$app/environment'
 
   import ProductCard from './ProductCard.svelte'
 
@@ -15,13 +14,12 @@
 
   const getSearchResults = async (value: string) => {
     !value && (searchResults = null)
-    if (browser) {
-      searchQuery = value
-      const res = await fetch(`https://dummyjson.com/products/search?q=${value}`)
-      const results = await res.json()
 
-      searchResults = results
-    }
+    searchQuery = value
+    const res = await fetch(`https://dummyjson.com/products/search?q=${value}`)
+    const results = await res.json()
+
+    searchResults = results
   }
 
   const clearSearch = () => {
