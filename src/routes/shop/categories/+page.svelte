@@ -5,6 +5,7 @@
   export let data: PageData
 </script>
 
+<h1>Categories</h1>
 {#each data.items as item}
   <h2><a href="/shop/categories/{item}">{Format.toProperCase(item)}</a></h2>
 {/each}
