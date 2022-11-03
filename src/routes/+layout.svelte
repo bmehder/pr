@@ -1,6 +1,6 @@
 <script lang="ts">
   import '../app.css'
-  import { page } from '$app/stores'
+  import { page, navigating } from '$app/stores'
   import { slides } from './slides'
 
   import Header from '$lib/Header/Header.svelte'

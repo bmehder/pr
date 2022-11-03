@@ -13,7 +13,7 @@
   let searchResults: Products | null
 
   const getSearchResults = async (value: string) => {
-    !value && (searchResults = null)
+    searchResults = null
 
     searchQuery = value
     const res = await fetch(`https://dummyjson.com/products/search?q=${value}`)
@@ -116,10 +116,11 @@
     font-size: 1rem;
     font-weight: normal;
     color: var(--light);
+    text-decoration: underline;
     cursor: pointer;
   }
   h1 span:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
   .content {
     display: grid;
