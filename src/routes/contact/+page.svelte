@@ -19,7 +19,7 @@
 
 {#if form?.results}
   <div>
-    <h3>Response to server</h3>
+    <h3>Response from server</h3>
     <pre>{JSON.stringify(form?.results, null, 2)}</pre>
   </div>
 {:else}

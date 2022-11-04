@@ -9,6 +9,10 @@
 </script>
 
 <svelte:head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-a11y-dark.min.css"
+  />
   <title>About</title>
 </svelte:head>
 

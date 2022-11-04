@@ -9,16 +9,16 @@
     month: 'long',
     day: 'numeric',
   }
-  const date = new Date(data.items[0].date)
+  const date = new Date(data.post[0].date)
 
   const src =
-    data.items[0]._embedded['wp:featuredmedia'][0].media_details.sizes.large
+    data.post[0]._embedded['wp:featuredmedia'][0].media_details.sizes.large
       ?.source_url
-  const title = data.items[0].title.rendered
-  const authorSlug = data.items[0]._embedded.author[0].slug
-  const authorName = data.items[0]._embedded.author[0].name
-  const content = data.items[0].content.rendered
-  const categories = data.items[0]._embedded['wp:term'][0]
+  const title = data.post[0].title.rendered
+  const authorSlug = data.post[0]._embedded.author[0].slug
+  const authorName = data.post[0]._embedded.author[0].name
+  const content = data.post[0].content.rendered
+  const categories = data.post[0]._embedded['wp:term'][0]
 </script>
 
 <svelte:head>

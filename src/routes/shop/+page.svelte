@@ -5,6 +5,7 @@
 
   type Products = {
     products?: []
+    total: number
   }
   export let data: PageData
 
@@ -16,7 +17,9 @@
     searchResults = null
 
     searchQuery = value
-    const res = await fetch(`https://dummyjson.com/products/search?q=${value}`)
+    const res = await fetch(
+      `https://dummyjson.com/products/search?q=${value}&limit=100`
+    )
     const results = await res.json()
 
     searchResults = results
@@ -38,7 +41,7 @@
 <header class="search">
   {#if searchResults && value}
     <h1>
-      Search Results for '{searchQuery}'
+      {searchResults.total} search results for '{searchQuery}'
       <span on:click={clearSearch} on:keypress>Clear Search</span>
     </h1>
   {:else}
