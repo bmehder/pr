@@ -13,8 +13,8 @@
     background-color: var(--light);
   }
   .isLoading {
-    width: 80%;
-    transition: width 600ms ease-in-out;
+    width: 100%;
+    transition: width 2000ms cubic-bezier(0, 0.5, 0.5, 0);
     transition-delay: 200ms;
   }
 </style>
