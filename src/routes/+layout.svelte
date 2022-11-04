@@ -1,19 +1,21 @@
 <script lang="ts">
   import '../app.css'
   import { page } from '$app/stores'
-  import { slides } from './slides'
 
   import Header from '$lib/Header/Header.svelte'
   import Slider from '$lib/Slider/Slider.svelte'
   import BackToTop from '$lib/Header/BackToTop.svelte'
   import Footer from '$lib/Footer.svelte'
+
+  import type { PageData } from './$types'
+  export let data: PageData
 </script>
 
 <div class="wrapper">
   <Header --background="#323232" --color="white" --width="1100px" />
 
   {#if $page.routeId === '/'}
-    <Slider {slides} duration={6000} />
+    <Slider slides={data.slides} duration={6000} />
   {/if}
 
   <main>

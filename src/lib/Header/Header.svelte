@@ -5,7 +5,7 @@
 
   import Nav from './Nav.svelte'
   import Hamburger from './Hamburger.svelte'
-
+  import Loading from './Loading.svelte'
   const BREAKPOINT = 600
 
   let innerWidth: number
@@ -20,6 +20,8 @@
 </script>
 
 <svelte:window bind:innerWidth />
+
+<Loading />
 
 <header
   class:isOpen={$isOpen}

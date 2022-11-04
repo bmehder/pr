@@ -42,7 +42,6 @@ export async function load({ fetch }: RequestEvent) {
   )
 
   // Slides
-
   type Slides = {
     src: string
     text: string

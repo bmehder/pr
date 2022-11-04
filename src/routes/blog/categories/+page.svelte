@@ -10,5 +10,7 @@
 
 <h1>Categories</h1>
 {#each data.posts as item}
-  <h2><a href="/blog/categories/{item.slug}">{item.name}</a></h2>
+  <h2>
+    <a href="/blog/categories/{item.slug}" data-sveltekit-prefetch>{item.name}</a>
+  </h2>
 {/each}

@@ -11,5 +11,7 @@
 <h1>Authors</h1>
 
 {#each data.items as item}
-  <h2><a href="/blog/authors/{item.slug}">{item.name}</a></h2>
+  <h2>
+    <a href="/blog/authors/{item.slug}" data-sveltekit-prefetch>{item.name}</a>
+  </h2>
 {/each}

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
+  import { isSubmittingForm } from './store'
 </script>
 
 <form method="POST" use:enhance>
@@ -10,7 +11,11 @@
   <input type="email" name="email" />
   <label for="message">Message</label>
   <textarea name="message" />
-  <input type="submit" value="Submit Message" />
+  <input
+    on:click={() => ($isSubmittingForm = true)}
+    type="submit"
+    value="Submit Message"
+  />
 </form>
 
 <style>

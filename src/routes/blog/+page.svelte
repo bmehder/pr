@@ -2,6 +2,7 @@
   import type { PageData } from './$types'
 
   import Card from '$lib/Card.svelte'
+
   export let data: PageData
 </script>
 

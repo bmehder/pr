@@ -1,9 +1,12 @@
 <script lang="ts">
   import type { ActionData } from './$types'
+  import { isSubmittingForm } from './store'
 
   import Form from './Form.svelte'
 
   export let form: ActionData
+
+  $: form?.results && ($isSubmittingForm = false)
 </script>
 
 <svelte:head>

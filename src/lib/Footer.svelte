@@ -25,9 +25,4 @@
   p {
     margin: 0;
   }
-  @media screen and (max-width: 600px) {
-    div {
-      padding-inline: 2rem;
-    }
-  }
 </style>

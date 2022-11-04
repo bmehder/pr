@@ -1,16 +1,7 @@
 <script lang="ts">
-  type Item = {
-    date: Date
-    slug: string
-    src: string
-    title: {
-      rendered: string
-    }
-    excerpt: {
-      rendered: string
-    }
-  }
-  export let item: Item
+  import type { WP_REST_API_Post } from 'wp-types'
+
+  export let item: WP_REST_API_Post
 
   const dateOptions = {
     weekday: 'long',
