@@ -14,7 +14,7 @@
   const slug = item.slug
   const src =
     item._embedded['wp:featuredmedia'][0].media_details.sizes.medium_square
-      .source_url
+      ?.source_url
   const title = item.title.rendered
   const excerpt = item.excerpt.rendered
 </script>
