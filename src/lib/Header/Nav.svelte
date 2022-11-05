@@ -1,4 +1,5 @@
 <script>
+  import DarkMode from './DarkMode.svelte'
   import { isOpen } from './store'
 
   const handleClick = async () => {
@@ -38,6 +39,9 @@
       </ul>
     </li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
+    {#if !$isOpen}
+      <li><DarkMode /></li>
+    {/if}
   </ul>
 </nav>
 

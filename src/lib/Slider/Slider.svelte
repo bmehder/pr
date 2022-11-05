@@ -92,6 +92,9 @@
 </aside>
 
 <style>
+  :global(.dark) aside {
+    display: none;
+  }
   aside {
     position: relative;
   }
