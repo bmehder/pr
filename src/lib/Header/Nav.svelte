@@ -1,6 +1,7 @@
 <script>
-  import DarkMode from './DarkMode.svelte'
   import { isOpen } from './store'
+
+  import DarkMode from './DarkMode.svelte'
 
   const handleClick = async () => {
     $isOpen = false
@@ -39,9 +40,7 @@
       </ul>
     </li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
-    {#if !$isOpen}
-      <li><DarkMode /></li>
-    {/if}
+    <li><DarkMode --width="1.5rem" /></li>
   </ul>
 </nav>
 

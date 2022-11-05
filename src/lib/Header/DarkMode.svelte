@@ -7,7 +7,7 @@
   }
 </script>
 
-<div>
+<div on:click={handleClick} on:keypress>
   {#if isDark}
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,8 +16,6 @@
       stroke-width="1.5"
       stroke="currentColor"
       class="w-6 h-6"
-      on:click={handleClick}
-      on:keypress
     >
       <path
         stroke-linecap="round"
@@ -33,8 +31,6 @@
       stroke-width="1.5"
       stroke="currentColor"
       class="w-6 h-6"
-      on:click={handleClick}
-      on:keypress
     >
       <path
         stroke-linecap="round"
@@ -47,7 +43,8 @@
 
 <style>
   svg {
-    width: 1.5rem;
+    width: var(--width);
+    height: auto;
     cursor: pointer;
   }
 </style>

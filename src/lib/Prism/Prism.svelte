@@ -100,7 +100,7 @@
 
 <style>
   div {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   pre {
     position: relative;

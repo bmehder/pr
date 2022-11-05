@@ -78,9 +78,42 @@
 
 <h2>Prisvm Components</h2>
 
+<h3>Copy text to the Clipboard</h3>
 <Prism code="const copyText = str => navigator.clipboard.writeText(str)" />
 
+<h3>Turn on the browser's design mode</h3>
 <Prism code="const enterDesignMode = () => document.designMode = 'on'" />
+
+<h3>Load posts from WP REST API w/ SvelteKit</h3>
+<Prism
+  code={`
+  // JavaScript
+  export async function load({ fetch }) {
+    const BASE_URL = 'https://example.com/wp-json/wp/v2/'
+
+    const response = await fetch(BASE_URL + 'posts')
+    const posts = await response.json()
+
+    return posts
+  }`}
+/>
+
+<Prism
+  code={`
+  // TypeScript
+  import type { RequestEvent } from '@sveltejs/kit'
+  import type { WP_REST_API_Posts } from 'wp-types'
+  
+  /** @type {import('./$types').PageLoad} */
+  export async function load({ fetch }: RequestEvent) {
+    const BASE_URL = 'https://example.com/wp-json/wp/v2/'
+
+    const response = await fetch(BASE_URL + 'posts')
+    const posts: WP_REST_API_Posts = await response.json()
+
+    return posts
+  }`}
+/>
 
 <style>
   aside {
