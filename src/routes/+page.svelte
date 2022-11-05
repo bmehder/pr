@@ -120,5 +120,8 @@
     img {
       margin-top: 3rem;
     }
+    .boxed-content {
+      padding: 2rem;
+    }
   }
 </style>

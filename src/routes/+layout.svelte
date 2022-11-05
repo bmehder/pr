@@ -14,9 +14,11 @@
 <div class="wrapper">
   <Header --background="#323232" --color="white" --width="1100px" />
 
-  {#if $page.routeId === '/'}
-    <Slider slides={data.slides} duration={6000} />
-  {/if}
+  <div class="slider">
+    {#if $page.routeId === '/'}
+      <Slider slides={data.slides} duration={6000} />
+    {/if}
+  </div>
 
   <main>
     <slot />
@@ -33,6 +35,10 @@
     min-height: 100vh;
   }
 
+  .slider {
+    display: contents;
+  }
+
   main {
     width: 100%;
     max-width: 1100px;
@@ -40,5 +46,11 @@
     padding-inline: 2rem;
     margin-inline: auto;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 600px) {
+    .slider {
+      display: none;
+    }
   }
 </style>
