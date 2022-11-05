@@ -24,7 +24,6 @@
 <svelte:head>
   <title>Blog - {title}</title>
 </svelte:head>
-
 <article>
   <h1>{@html title}</h1>
   <p>

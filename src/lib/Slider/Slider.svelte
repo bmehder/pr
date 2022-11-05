@@ -3,7 +3,18 @@
   import PausePlay from './PausePlay.svelte'
   import RightArrow from './RightArrow.svelte'
 
-  export let slides = []
+  // Slides
+  type Slides = {
+    src: string
+    text: string
+    options: {
+      top?: string
+      left?: string
+      transform?: string
+    }
+  }[]
+
+  export let slides: Slides = []
   export let duration = 6000
 
   let container: HTMLElement
@@ -66,11 +77,11 @@
   <PausePlay on:click={toggleAutoplay} {isAutoplay} />
 
   <div bind:this={container}>
-    {#each slides as { src, text, options: { top, left } }}
+    {#each slides as { src, text, options: { top, left, transform } }}
       <article>
         <img {src} alt="" />
         <h2 style="top: {top}; left: {left};">
-          <span>{text}</span>
+          <span>{@html text}</span>
         </h2>
       </article>
     {/each}
@@ -98,6 +109,7 @@
     display: block;
     scroll-snap-align: start;
     object-fit: cover;
+    transform: rotateY(180deg);
   }
   article {
     position: relative;
@@ -110,6 +122,7 @@
     margin: 0;
     color: var(--dark);
     font-size: 10vw;
+    line-height: 1.1em;
     text-align: center;
     transform: translate(-50%, -50%);
   }
@@ -136,9 +149,14 @@
       background-position: -200% center;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 600px) {
     div {
-      height: 100vh;
+      height: 90vh;
+    }
+    h2 {
+      top: 20% !important;
+      left: 50% !important;
+      font-size: 5rem;
     }
   }
 </style>

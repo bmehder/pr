@@ -8,7 +8,7 @@
   <title>Authors</title>
 </svelte:head>
 
-<h1>Authors</h1>
+<h1>Blog Authors</h1>
 
 {#each data.items as item}
   <h2>

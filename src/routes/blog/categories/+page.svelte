@@ -8,7 +8,7 @@
   <title>Categories</title>
 </svelte:head>
 
-<h1>Categories</h1>
+<h1>Blog Categories</h1>
 {#each data.posts as item}
   <h2>
     <a href="/blog/categories/{item.slug}" data-sveltekit-prefetch>{item.name}</a>

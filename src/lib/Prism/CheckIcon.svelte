@@ -14,6 +14,6 @@
 <style>
   svg {
     width: 1.5rem;
-    color: green;
+    color: white;
   }
 </style>
