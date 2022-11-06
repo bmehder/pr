@@ -8,8 +8,16 @@ import type { WP_REST_API_Posts } from 'wp-types'
 export async function load({ fetch }: RequestEvent) {
   type Posts = WP_REST_API_Posts
   // Posts
+  const POSTS_PER_PAGE = 12
+
+  const postsCountRes = await fetch(
+    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?per_page=100`
+  )
+  const allPosts: Posts = await postsCountRes.json()
+  const postsCount: number = allPosts.length
+
   const postsRes = await fetch(
-    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?per_page=10&_embed`
+    `https://sprucehealthgroup.com/wp-json/wp/v2/posts?per_page=${POSTS_PER_PAGE}&_embed`
   )
   const posts: Posts = await postsRes.json()
 
@@ -75,5 +83,5 @@ export async function load({ fetch }: RequestEvent) {
     },
   ]
 
-  return { posts, faqs, slides }
+  return { posts, postsCount, faqs, slides }
 }

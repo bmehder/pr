@@ -1,22 +1,23 @@
 <script lang="ts">
   import type { PageData } from './$types'
+  import { page } from '$app/stores'
 
   import Card from '$lib/Card.svelte'
 
   export let data: PageData
 </script>
 
-<svelte:head>
-  <title>Blog</title>
-</svelte:head>
+<h1>Blog (page {$page.params.number})</h1>
 
-<h1>Blog</h1>
-
-<section>
-  {#each data.posts as item}
-    <Card {item} />
-  {/each}
-</section>
+{#key data.paginatedPosts}
+  <section>
+    {#each data.paginatedPosts as item}
+      <Card {item} />
+    {:else}
+      <p>No posts</p>
+    {/each}
+  </section>
+{/key}
 
 <div>
   {#each { length: data.postsCount / 12 } as _, index}
