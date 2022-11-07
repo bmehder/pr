@@ -13,6 +13,7 @@
   <ul>
     <li><a on:click={handleClick} href="/">Home</a></li>
     <li><a on:click={handleClick} href="/about">About</a></li>
+    <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
     <li>
       <a on:click={handleClick} href="/blog">Blog</a>
       <ul>
@@ -28,7 +29,6 @@
         </li>
       </ul>
     </li>
-    <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
     <li>
       <a on:click={handleClick} href="/shop" data-sveltekit-prefetch>Shop</a>
       <ul>
@@ -38,6 +38,9 @@
           >
         </li>
       </ul>
+    </li>
+    <li>
+      <a on:click={handleClick} href="/services" data-sveltekit-prefetch>Services</a>
     </li>
     <li><a on:click={handleClick} href="/contact">Contact</a></li>
     <li><DarkMode --width="1.5rem" /></li>
@@ -110,6 +113,7 @@
       border-bottom: 2px solid white;
     }
     ul ul {
+      display: none !important;
       position: relative;
       gap: 1rem;
       margin-left: 0.25rem;
