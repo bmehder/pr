@@ -1,13 +1,31 @@
 <script lang="ts">
-  let isDark: boolean
+  let isDark: boolean = false
 
-  const handleClick = (): void => {
+  const toggleDarkMode = () => {
     document.body.classList.toggle('dark')
     isDark = !isDark
   }
+
+  const getThemeKey = () => localStorage.getItem('skpr-theme')
+
+  const getThemeOption = (): boolean =>
+    getThemeKey() && JSON.parse(getThemeKey() ?? '')
+
+  const setThemeOption = () =>
+    localStorage.setItem('skpr-theme', JSON.stringify(isDark))
+
+  const handleClick = (): void => {
+    toggleDarkMode()
+    setThemeOption()
+  }
+  const init = (_: HTMLElement) => {
+    isDark = getThemeOption()
+    isDark && document.body.classList.add('dark')
+    !isDark && document.body.classList.remove('dark')
+  }
 </script>
 
-<div on:click={handleClick} on:keypress>
+<div on:click={handleClick} on:keypress use:init>
   {#if isDark}
     <svg
       xmlns="http://www.w3.org/2000/svg"

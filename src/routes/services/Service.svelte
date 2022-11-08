@@ -9,14 +9,8 @@
 </script>
 
 <a href="/services/{slug}" data-sveltekit-prefetch>
-  <div>
-    <a href="/services/{slug}" data-sveltekit-prefetch
-      ><img loading="lazy" {src} alt={title} /></a
-    >
-    <h2>
-      {@html title}
-    </h2>
-  </div>
+  <img {src} alt={title} />
+  <h2>{@html title}</h2>
 </a>
 
 <style>
@@ -26,6 +20,12 @@
     border-radius: 2px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
     color: white;
+  }
+  a:hover {
+    outline: 4px solid var(--light);
+  }
+  a:hover h2 {
+    height: 100%;
   }
   img {
     width: 100%;
@@ -44,11 +44,5 @@
     text-align: center;
     font-size: 1.25rem;
     transition: all 200ms ease-in-out;
-  }
-  div:hover {
-    outline: 4px solid var(--light);
-  }
-  div:hover h2 {
-    height: 100%;
   }
 </style>
