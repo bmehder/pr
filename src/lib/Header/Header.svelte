@@ -7,7 +7,7 @@
   import Hamburger from './Hamburger.svelte'
   import Loading from './Loading.svelte'
 
-  const BREAKPOINT = 600
+  const BREAKPOINT = 768
 
   let innerWidth: number
 
@@ -56,7 +56,7 @@
     margin-inline: auto;
     padding-inline: 2rem;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     div {
       padding-inline: 2rem;
     }

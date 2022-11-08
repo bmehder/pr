@@ -1,9 +1,6 @@
 <script lang="ts">
-  import type { WP_REST_API_Post } from 'wp-types'
-
   export let service
 
-  const id = service.id
   const slug = service.slug
   const src =
     service._embedded['wp:featuredmedia'][0].media_details.sizes.medium_square
@@ -11,33 +8,47 @@
   const title = service.title.rendered
 </script>
 
-<article>
-  {#if src}
+<a href="/services/{slug}" data-sveltekit-prefetch>
+  <div>
     <a href="/services/{slug}" data-sveltekit-prefetch
       ><img loading="lazy" {src} alt={title} /></a
     >
-  {/if}
-  <div>
     <h2>
-      <a href="/services/{slug}" data-sveltekit-prefetch>{@html title}</a>
+      {@html title}
     </h2>
   </div>
-</article>
+</a>
 
 <style>
-  article {
+  a {
+    display: block;
+    position: relative;
+    border-radius: 2px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
-  }
-  div {
-    padding: 1.5rem;
-  }
-  h2 {
-    margin-top: 0;
-    /* margin-bottom: 1.5rem; */
-    line-height: 1.25;
+    color: white;
   }
   img {
     width: 100%;
+    aspect-ratio: 1;
     object-fit: cover;
+    border-radius: 2px;
+  }
+  h2 {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.52);
+    text-align: center;
+    font-size: 1.25rem;
+    transition: all 200ms ease-in-out;
+  }
+  div:hover {
+    outline: 4px solid var(--light);
+  }
+  div:hover h2 {
+    height: 100%;
   }
 </style>

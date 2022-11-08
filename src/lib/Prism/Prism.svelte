@@ -92,8 +92,8 @@
   <code class="language-{language}">
     {@html formattedCode}
   </code>
-<button on:click={handleClick}>
-  {#if isCopied}<CheckIcon />{:else}<CopyIcon />{/if}
+<button on:click={handleClick} class:isCopied>
+  {#if isCopied}Copied <CheckIcon --color="#abe338" />{:else}<CopyIcon />{/if}
 </button>
 </pre>
 </div>
@@ -106,14 +106,23 @@
     position: relative;
   }
   button {
-    display: grid;
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0.25rem;
+    right: 0.25rem;
     padding: 0.25rem;
     background-color: transparent;
+    color: white;
     border: none;
     border-bottom-left-radius: 4px;
     cursor: pointer;
+    opacity: 0;
+  }
+  div:hover button,
+  .isCopied {
+    opacity: 1;
+    transition: opacity 100ms ease-in-out;
+    transition-delay: 100ms;
   }
 </style>

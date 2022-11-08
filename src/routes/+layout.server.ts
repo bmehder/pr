@@ -50,7 +50,7 @@ export async function load({ fetch }: RequestEvent) {
   )
 
   // Slides
-  type Slides = {
+  type Slide = {
     src: string
     text: string
     options: {
@@ -58,9 +58,9 @@ export async function load({ fetch }: RequestEvent) {
       left?: string
       transform?: string
     }
-  }[]
+  }
 
-  const slides: Slides = [
+  const slides: Slide[] = [
     {
       src: 'img/plant.png',
       text: 'Hello <br /> Slider 1',

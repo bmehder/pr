@@ -21,10 +21,11 @@
 
 <div>
   {#each { length: data.postsCount / 12 } as _, index}
-    {#if index === 0}
-      <a href="/blog">{index + 1}</a>
+    {@const pageNumber = index + 1}
+    {#if pageNumber === 1}
+      <a href="/blog">{pageNumber}</a>
     {:else}
-      <a href="/blog/page/{index + 1}">{index + 1}</a>
+      <a href="/blog/page/{pageNumber}">{pageNumber}</a>
     {/if}
   {/each}
 </div>

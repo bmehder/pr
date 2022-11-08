@@ -22,7 +22,7 @@
   i.isOpen {
     padding-top: 0.5rem;
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     i {
       display: none;
     }

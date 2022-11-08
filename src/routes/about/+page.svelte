@@ -18,7 +18,6 @@
 
 <h1>About</h1>
 
-<h2>Heading One</h2>
 <p>
   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit corrupti
   rerum fugit vero optio veritatis qui velit. Est quis facilis voluptatum, optio
@@ -35,7 +34,6 @@
 <h2>Tabsv Component</h2>
 <Tabs tabs={data.tabs} --color="var(--light)" />
 
-<h2>Heading Two</h2>
 <p>
   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit corrupti
   rerum fugit vero optio veritatis qui velit. Est quis facilis voluptatum, optio
@@ -60,8 +58,6 @@
     shadow="0 10px 20px rgba(0,0,0,0.24)"
   />
 </aside>
-
-<h2>Heading Three</h2>
 
 <p>
   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit corrupti
@@ -94,7 +90,7 @@
     const response = await fetch(BASE_URL + 'posts')
     const posts = await response.json()
 
-    return posts
+    return { posts }
   }`}
 />
 
@@ -111,7 +107,7 @@
     const response = await fetch(BASE_URL + 'posts')
     const posts: WP_REST_API_Posts = await response.json()
 
-    return posts
+    return { posts }
   }`}
 />
 

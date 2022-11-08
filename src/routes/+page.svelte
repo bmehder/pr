@@ -118,7 +118,7 @@
       gap: 0 !important;
     }
     img {
-      margin-top: 3rem;
+      display: none;
     }
     .boxed-content {
       padding: 2rem;

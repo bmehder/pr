@@ -95,7 +95,7 @@
   a:hover {
     text-decoration: underline;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     nav {
       flex-direction: column;
       gap: 3rem;
