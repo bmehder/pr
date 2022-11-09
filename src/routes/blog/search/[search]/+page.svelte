@@ -1,6 +1,4 @@
 <script lang="ts">
-  export const prerender = false
-
   import type { PageData } from './$types'
 
   import { page } from '$app/stores'

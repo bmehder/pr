@@ -1,6 +1,8 @@
 // TypeScript
 import type { RequestEvent } from '@sveltejs/kit'
 
+export const prerender = false
+
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }: RequestEvent) {
   const BASE_URL = 'https://sprucehealthgroup.com/wp-json/wp/v2/'
