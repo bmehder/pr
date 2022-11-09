@@ -8,7 +8,7 @@
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }
+  } as {}
   const date = new Date(item.date)
 
   const slug = item.slug

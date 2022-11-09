@@ -1,7 +1,9 @@
 // Viewport
-let intersectionObserver
+type IntersectionObserverOptions = { rootMargin?: string }
 
-const ensureIntersectionObserver = options => {
+let intersectionObserver: IntersectionObserver
+
+const ensureIntersectionObserver = (options: IntersectionObserverOptions) => {
   if (intersectionObserver) return
 
   intersectionObserver = new IntersectionObserver(entries => {
@@ -12,13 +14,16 @@ const ensureIntersectionObserver = options => {
   }, options)
 }
 
-export const viewport = (element, options) => {
+export const viewport = (
+  element: HTMLElement,
+  options: IntersectionObserverOptions
+) => {
   ensureIntersectionObserver(options)
 
   intersectionObserver.observe(element)
 
   return {
-    update(newOptions) {
+    update(newOptions: IntersectionObserverOptions) {
       options = newOptions
     },
 

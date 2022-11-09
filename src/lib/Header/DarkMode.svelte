@@ -6,10 +6,10 @@
     isDark = !isDark
   }
 
-  const getThemeKey = () => localStorage.getItem('skpr-theme')
+  const getThemeOption = () => localStorage.getItem('skpr-theme')
 
-  const getThemeOption = (): boolean =>
-    getThemeKey() && JSON.parse(getThemeKey() ?? '')
+  const isDarkMode = (): boolean =>
+    (!!getThemeOption() as boolean) && JSON.parse(getThemeOption() ?? '')
 
   const setThemeOption = () =>
     localStorage.setItem('skpr-theme', JSON.stringify(isDark))
@@ -19,7 +19,7 @@
     setThemeOption()
   }
   const init = (_: HTMLElement) => {
-    isDark = getThemeOption()
+    isDark = isDarkMode()
     isDark && document.body.classList.add('dark')
     !isDark && document.body.classList.remove('dark')
   }
