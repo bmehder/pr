@@ -1,5 +1,5 @@
 export const closeModal = (element: HTMLDialogElement) => {
-  element.addEventListener('click', function (event) {
+  const callback = (event: MouseEvent) => {
     const dialogElement = element.getBoundingClientRect()
 
     const isInDialog =
@@ -9,6 +9,14 @@ export const closeModal = (element: HTMLDialogElement) => {
       event.clientX <= dialogElement.left + dialogElement.width
 
     !isInDialog && element.close()
-    document.body.style.position = 'unset'
-  })
+    // document.body.style.position = 'unset'
+  }
+
+  element.addEventListener('click', callback)
+
+  return {
+    destroy() {
+      element.removeEventListener('click', callback)
+    },
+  }
 }
