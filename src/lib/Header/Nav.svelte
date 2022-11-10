@@ -42,7 +42,12 @@
     <li>
       <a on:click={handleClick} href="/services" data-sveltekit-prefetch>Services</a>
     </li>
-    <li><a on:click={handleClick} href="/contact">Contact</a></li>
+    <li>
+      <a on:click={handleClick} href="/contact">Contact</a>
+      <ul>
+        <li><a on:click={handleClick} href="/reviews">Reviews</a></li>
+      </ul>
+    </li>
     <li><DarkMode --width="1.5rem" /></li>
   </ul>
 </nav>
