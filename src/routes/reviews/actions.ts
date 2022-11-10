@@ -1,14 +1,14 @@
-// Click Outside
-export const clickOutside = (element: HTMLElement, callbackFunction: () => void) => {
-  const handleClick = evt => {
-    !element.contains(evt.target) && callbackFunction()
-  }
+export const closeModal = (element: HTMLDialogElement) => {
+  element.addEventListener('click', function (event) {
+    const dialogElement = element.getBoundingClientRect()
 
-  document.body.addEventListener('click', handleClick, { capture: true })
+    const isInDialog =
+      dialogElement.top <= event.clientY &&
+      event.clientY <= dialogElement.top + dialogElement.height &&
+      dialogElement.left <= event.clientX &&
+      event.clientX <= dialogElement.left + dialogElement.width
 
-  return {
-    destroy() {
-      document.body.removeEventListener('click', handleClick)
-    },
-  }
+    !isInDialog && element.close()
+    document.body.style.position = 'unset'
+  })
 }

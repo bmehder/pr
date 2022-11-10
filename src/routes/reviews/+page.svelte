@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types'
-  import { clickOutside } from './actions'
+  import { closeModal } from './actions'
   import Review from './Review.svelte'
 
   export let data: PageData
@@ -17,7 +17,7 @@
   const closeReview = () => {
     selected = null
     dialogElem?.close()
-    document.body.style.position = 'unset'
+    // document.body.style.position = 'unset'
   }
 </script>
 
@@ -26,7 +26,7 @@
 <div>
   {#each data.reviews as review, index}
     <Review {review} on:click={() => selectReview(index)} />
-    <dialog bind:this={dialogElem} use:clickOutside={closeReview}>
+    <dialog bind:this={dialogElem} use:closeModal>
       {#if selected != null}
         <Review isSingle={true} review={data.reviews[selected]} />
       {/if}
