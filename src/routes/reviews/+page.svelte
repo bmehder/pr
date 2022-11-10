@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types'
-  import { closeModal } from './actions'
+  import Close from '$lib/CloseButton.svelte'
   import Review from './Review.svelte'
 
   export let data: PageData
@@ -8,18 +8,40 @@
   let selected: number | null
   let dialogElem: HTMLDialogElement
 
+  const closeModal = (element: HTMLDialogElement) => {
+    const callback = (event: MouseEvent) => {
+      const dialogElement = element.getBoundingClientRect()
+
+      const isInDialog =
+        dialogElement.top <= event.clientY &&
+        event.clientY <= dialogElement.top + dialogElement.height &&
+        dialogElement.left <= event.clientX &&
+        event.clientX <= dialogElement.left + dialogElement.width
+
+      if (!isInDialog) {
+        element.close()
+        selected = null
+      }
+    }
+
+    element.addEventListener('click', callback)
+
+    return {
+      destroy() {
+        element.removeEventListener('click', callback)
+      },
+    }
+  }
+
   const selectReview = (index: number) => {
     selected = index
     dialogElem.showModal()
-    // document.body.style.position = 'fixed'
   }
 
   const handleCloseButton = () => {
     selected = null
-    dialogElem.close()
+    dialogElem?.close()
   }
-
-  $: console.log(dialogElem?.attributes)
 </script>
 
 <h1>Reviews</h1>
@@ -29,25 +51,11 @@
     <Review {review} on:click={() => selectReview(index)} />
     <dialog
       bind:this={dialogElem}
-      on:click={() => (selected = null)}
       use:closeModal
+      on:click|self={() => (selected = null)}
       on:keypress
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-6 h-6"
-        on:click={handleCloseButton}
-        on:keypress
-      >
-        <path
-          fill-rule="evenodd"
-          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-          clip-rule="evenodd"
-        />
-      </svg>
-
+      <Close --width="4rem" on:click={handleCloseButton} />
       {#if selected != null}
         <Review isSingle={true} review={data.reviews[selected]} />
       {/if}
@@ -65,14 +73,6 @@
   dialog {
     position: relative;
   }
-  svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3rem;
-    color: var(--light);
-    cursor: pointer;
-  }
   dialog:modal {
     position: fixed;
     top: 50%;
@@ -83,6 +83,8 @@
     user-select: text;
     visibility: visible;
     border-radius: 1rem;
+    border-top-right-radius: 0;
+    overflow: visible;
   }
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.8);

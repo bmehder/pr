@@ -14,6 +14,7 @@
     }
     date: Date
   }
+
   export let review: Review
   export let isSingle = false
 
@@ -29,7 +30,7 @@
   const date = new Date(review.date).toLocaleDateString('en-US', dateOptions)
 </script>
 
-<blockquote on:click on:keypress>
+<blockquote class:isSingle on:click on:keypress>
   {#each stars as _}
     <span><Star /></span>
   {/each}
@@ -47,6 +48,9 @@
     line-height: 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
     cursor: pointer;
+  }
+  .isSingle {
+    cursor: default;
   }
   blockquote :global(p) {
     margin-top: 1rem;
