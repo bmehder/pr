@@ -46,6 +46,7 @@
     padding: 2rem;
     line-height: 1.5rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
   }
   blockquote :global(p) {
     margin-top: 1rem;

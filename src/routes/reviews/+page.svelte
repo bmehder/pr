@@ -13,10 +13,13 @@
     dialogElem.showModal()
     // document.body.style.position = 'fixed'
   }
+
   const handleCloseButton = () => {
     selected = null
     dialogElem.close()
   }
+
+  $: console.log(dialogElem?.attributes)
 </script>
 
 <h1>Reviews</h1>
@@ -26,8 +29,8 @@
     <Review {review} on:click={() => selectReview(index)} />
     <dialog
       bind:this={dialogElem}
-      use:closeModal
       on:click={() => (selected = null)}
+      use:closeModal
       on:keypress
     >
       <svg
