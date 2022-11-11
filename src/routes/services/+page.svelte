@@ -7,14 +7,14 @@
 
 <h1>Services</h1>
 
-<section>
+<section class="auto-grid">
   {#each data.services.reverse() as service}
     <Service {service} />
   {/each}
 </section>
 
 <style>
-  section {
+  .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
     gap: 3rem;

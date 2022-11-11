@@ -66,7 +66,7 @@
     <button on:click={() => getSearchResults(value)} on:keypress>Search</button>
   </div>
 </header>
-<div class="content">
+<div class="auto-grid">
   {#if searchResults?.products}
     {#each searchResults.products as product}
       <ProductCard {product} />
@@ -94,6 +94,7 @@
   input,
   button {
     padding: 0.5rem 1rem;
+    font-size: 1rem;
   }
   header div div {
     position: relative;
@@ -125,12 +126,12 @@
   h1 span:hover {
     text-decoration: none;
   }
-  .content {
+  /* .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     gap: 3rem;
     margin-top: 1.5rem;
-  }
+  } */
   @media screen and (max-width: 720px) {
     header {
       flex-direction: column;

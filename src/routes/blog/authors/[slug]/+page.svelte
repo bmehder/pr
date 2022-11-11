@@ -13,7 +13,7 @@
 </svelte:head>
 
 <h1>By {name}</h1>
-<section>
+<section class="auto-grid">
   {#if Array.isArray(data.items)}
     {#each data.items as item}
       <Card {item} />
@@ -22,7 +22,7 @@
 </section>
 
 <style>
-  section {
+  .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     gap: 3rem;

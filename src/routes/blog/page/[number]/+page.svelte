@@ -10,7 +10,7 @@
 <h1>Blog (page {$page.params.number})</h1>
 
 {#key data.paginatedPosts}
-  <section>
+  <section class="auto-grid">
     {#each data.paginatedPosts as item}
       <Card {item} />
     {:else}
@@ -31,7 +31,7 @@
 </div>
 
 <style>
-  section {
+  .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     gap: 3rem;

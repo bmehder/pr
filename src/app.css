@@ -28,7 +28,6 @@ body {
   color: white;
 }
 
-
 h1, h2, h3, p, ul, ol {
   margin-top: 1.5rem;
   line-height: 1.5em;
@@ -55,6 +54,18 @@ a:hover {
   text-decoration: underline;
 }
 
+button, input[type='submit'] {
+  background-color: var(--light);
+  color: white
+}
+
 sup {
   line-height: 0;
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  gap: 3rem;
+  margin-top: 1.5rem;
 }

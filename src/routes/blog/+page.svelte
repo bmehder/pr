@@ -26,7 +26,7 @@
   </form>
 </header>
 
-<section>
+<section class="auto-grid">
   {#each data.posts as item}
     <Card {item} />
   {/each}
@@ -64,11 +64,11 @@
     width: 100%;
   }
   button {
-    background-color: var(--light);
-    color: white;
+    /* background-color: var(--light); */
+    /* color: white; */
     border: none;
   }
-  section {
+  .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     gap: 3rem;
