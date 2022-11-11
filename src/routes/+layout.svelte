@@ -1,13 +1,13 @@
 <script lang="ts">
   import '../app.css'
   import { page } from '$app/stores'
+  import type { PageData } from './$types'
 
   import Header from '$lib/Header/Header.svelte'
   import Slider from '$lib/Slider/Slider.svelte'
   import BackToTop from '$lib/Header/BackToTop.svelte'
   import Footer from '$lib/Footer.svelte'
 
-  import type { PageData } from './$types'
   export let data: PageData
 </script>
 

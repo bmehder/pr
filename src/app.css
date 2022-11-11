@@ -4,6 +4,7 @@
   --light: #f27121;
   --black: #222;
   --white: rgba(255, 255, 255, 0.8);
+  --shadow: 0 10px 20px rgba(0,0,0,0.24);
 }
 
 html {
@@ -52,6 +53,17 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+a.button {
+  display: inline-block;
+  margin-block: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--light);
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 button, input[type='submit'] {

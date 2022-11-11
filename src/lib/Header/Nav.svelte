@@ -12,7 +12,13 @@
   <h1><a on:click={handleClick} href="/">Logo</a></h1>
   <ul>
     <li><a on:click={handleClick} href="/">Home</a></li>
-    <li><a on:click={handleClick} href="/about">About</a></li>
+    <li>
+      <a on:click={handleClick} href="/about">About</a>
+      <ul>
+        <li><a on:click={handleClick} href="/team">Team</a></li>
+        <li><a on:click={handleClick} href="/careers">Careers</a></li>
+      </ul>
+    </li>
     <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
     <li>
       <a on:click={handleClick} href="/blog">Blog</a>
