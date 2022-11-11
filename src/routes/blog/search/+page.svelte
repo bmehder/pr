@@ -20,7 +20,6 @@
   button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    border: none;
   }
   form {
     display: flex;
@@ -32,5 +31,6 @@
   button {
     background-color: var(--light);
     color: white;
+    border: none;
   }
 </style>

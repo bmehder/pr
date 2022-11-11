@@ -48,7 +48,7 @@
     <li>
       <a on:click={handleClick} href="/contact">Contact</a>
     </li>
-    <li><DarkMode --width="1.5rem" /></li>
+    <li on:click={handleClick} on:keypress><DarkMode --width="1.5rem" /></li>
   </ul>
 </nav>
 

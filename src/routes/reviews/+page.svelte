@@ -89,4 +89,9 @@
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.8);
   }
+  @media screen and (max-width: 768px) {
+    dialog:modal {
+      width: 90%;
+    }
+  }
 </style>

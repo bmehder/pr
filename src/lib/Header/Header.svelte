@@ -38,7 +38,7 @@
 
 <style>
   header {
-    padding-block: 2rem;
+    padding-block: 1.5rem;
     background-color: var(--background, var(--black));
     color: var(--color);
   }

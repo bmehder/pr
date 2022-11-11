@@ -12,4 +12,7 @@
   {#if post.subtype === 'post'}
     <Result item={post} />
   {/if}
+{:else}
+  <p>No posts found for '{$page.params.search}'</p>
+  <p><a href="/blog/search">Search something else</a></p>
 {/each}

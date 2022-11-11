@@ -21,7 +21,7 @@
 
 <style>
   svg {
-    width: 2rem;
+    width: var(--width, 2rem);
     position: absolute;
     top: 1rem;
     right: 1rem;

@@ -37,7 +37,7 @@
     New York, NY 10032<br />
   </p>
   <h2>Phone</h2>
-  <p>+1 (800) 867-5309</p>
+  <p><a href="tel:+18608675309">+1 (860) 867-5309</a></p>
   <h2>Socials</h2>
   <ul>
     <li><i class="fa-brands fa-2x fa-facebook" /></li>
@@ -54,5 +54,14 @@
     padding: 0;
     list-style-type: none;
     color: #323232;
+  }
+  .fa-brands {
+    cursor: pointer;
+  }
+  .fa-brands:hover {
+    color: var(--light) !important;
+  }
+  :global(body.dark) .fa-brands {
+    color: white;
   }
 </style>

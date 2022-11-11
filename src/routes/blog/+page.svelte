@@ -46,7 +46,7 @@
   header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 1.5rem;
   }
   h1 {
@@ -56,11 +56,9 @@
   button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    border: none;
   }
   form {
     display: flex;
-    margin-block: 1.5rem;
   }
   input {
     width: 100%;
@@ -68,6 +66,7 @@
   button {
     background-color: var(--light);
     color: white;
+    border: none;
   }
   section {
     display: grid;
