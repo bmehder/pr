@@ -37,6 +37,7 @@
     <div>
       <input
         type="text"
+        class:active={value}
         bind:value
         placeholder="Search..."
         on:input={() => getSearchResults(value)}
@@ -81,15 +82,25 @@
     margin-top: 1.5rem;
   }
   header > div {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    flex-basis: 50%;
   }
   input {
     position: relative;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    width: 50%;
+    border: 1px solid #ccc;
+    transition: width 300ms ease-in-out;
+  }
+  input.active,
+  input:focus {
     width: 100%;
+    box-shadow: var(--shadow);
+    border-radius: 0;
   }
   svg {
     position: absolute;
@@ -104,10 +115,13 @@
   }
   header div div {
     position: relative;
-    width: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
   aside {
     position: absolute;
+    top: 2.5rem;
     width: 100%;
     background-color: white;
     box-shadow: var(--shadow);
@@ -125,7 +139,7 @@
   }
   .blur {
     opacity: 0.9;
-    filter: blur(2px);
+    filter: blur(10px);
     transition: all 100ms ease;
   }
   @media screen and (max-width: 769px) {

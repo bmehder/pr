@@ -23,8 +23,8 @@
   <div>
     <a href="/shop/{id}"><img src={thumbnail} alt={title} /></a>
     <div>
-      <h2><a href="/shop/{id}">{title}</a></h2>
-      <h2>{Format.toDollars(price)}</h2>
+      <p><a href="/shop/{id}">{title}</a></p>
+      <p><small>{Format.toDollars(price)}</small></p>
     </div>
   </div>
 </article>
@@ -32,22 +32,19 @@
 <style>
   article {
     position: relative;
-    max-width: 300px;
     background-color: white;
+    font-weight: bold;
   }
   div {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   div div {
     flex-direction: column;
     justify-content: center;
     gap: 0;
   }
-  h2 {
-    font-size: 1rem;
-  }
-  h2 {
+  p {
     margin: 0;
   }
   img {
