@@ -12,7 +12,7 @@
 
   export let product: Product
 
-  const { id, thumbnail, title, price, category, description } = product
+  const { id, thumbnail, title, price } = product
 </script>
 
 <svelte:head>
@@ -52,9 +52,12 @@
   }
   img {
     width: 100px;
-    padding: 0.25rem;
-    padding-left: 0;
     aspect-ratio: 1;
     object-fit: cover;
+  }
+  @media screen and (max-width: 769px) {
+    article {
+      max-width: none;
+    }
   }
 </style>
