@@ -14,7 +14,8 @@
   let searchResults: Products | null
 
   const getSearchResults = async (value: string) => {
-    if (value.length < 2) return
+    if (!value) return
+
     searchResults = null
 
     const res = await fetch(
@@ -27,7 +28,7 @@
 
   const handleClick = () => (value = '')
 
-  $: if (value.length < 2) searchResults = null
+  $: if (!value) searchResults = null
 </script>
 
 <header class="search">
@@ -52,20 +53,22 @@
           d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
         />
       </svg>
-
       <aside>
         {#if searchResults?.products}
+          {#if searchResults.total === 0}
+            <h3>No results</h3>
+          {:else}
+            <h3>{searchResults.total} results</h3>
+          {/if}
           {#each searchResults.products as product}
             <MiniCard {product} />
-          {:else}
-            <p>No results</p>
           {/each}
         {/if}
       </aside>
     </div>
   </div>
 </header>
-<div class="auto-grid" class:blur={value.length > 1}>
+<div class="auto-grid" class:blur={value}>
   {#each data.items.products as product}
     <ProductCard {product} />
   {/each}
@@ -106,20 +109,22 @@
   aside {
     position: absolute;
     width: 100%;
+    background-color: white;
     box-shadow: var(--shadow);
     z-index: 1;
   }
   aside > :global(article:nth-child(even)) {
     background-color: #f1f1f1;
   }
-  h1 {
+  h1,
+  h3 {
     margin: 0;
   }
-  p {
+  h3 {
     padding: 1rem;
-    background-color: white;
   }
   .blur {
+    opacity: 0.9;
     filter: blur(2px);
     transition: all 100ms ease;
   }

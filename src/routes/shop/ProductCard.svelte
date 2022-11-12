@@ -35,7 +35,10 @@
 
 <style>
   article {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+    box-shadow: var(--shadow);
+  }
+  :global(.blur) article {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
   }
   div {
     padding: 2rem;
