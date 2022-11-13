@@ -101,6 +101,8 @@
     width: 100%;
     box-shadow: var(--shadow);
     border-radius: 0;
+    outline: none;
+    box-shadow: 0 0 0 0.125rem var(--light) inset;
   }
   svg {
     position: absolute;
@@ -109,6 +111,9 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+  }
+  :global(.dark) svg {
+    color: initial;
   }
   svg:hover {
     color: var(--light);
@@ -136,6 +141,9 @@
   }
   h3 {
     padding: 1rem;
+  }
+  :global(.dark) h3 {
+    color: initial;
   }
   .blur {
     opacity: 0.9;

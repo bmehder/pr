@@ -57,4 +57,7 @@
       max-width: none;
     }
   }
+  :global(.dark) article {
+    color: black;
+  }
 </style>
