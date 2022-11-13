@@ -1,7 +1,35 @@
 <script lang="ts">
-  import type { WP_REST_API_Post } from 'wp-types'
+  // import type { WP_REST_API_Post } from 'wp-types'
 
-  export let item: WP_REST_API_Post
+  type Post = {
+    date: Date
+    slug: string
+    _embedded: {
+      'wp:featuredmedia': {
+        media_details: {
+          sizes: {
+            medium_square?: {
+              source_url: string
+            }
+          }
+        }
+      }[]
+      author: [
+        {
+          slug: string
+          name: string
+        }
+      ]
+      'wp:term': { length: number; slug: string; name: string }[]
+    }
+    title: {
+      rendered: string
+    }
+    excerpt: {
+      rendered: string
+    }
+  }
+  export let item: Post
 
   const dateOptions = {
     weekday: 'long',

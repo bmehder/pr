@@ -19,7 +19,7 @@
 
   let container: HTMLElement
   let innerWidth: number
-  let intervalId: number | null = null
+  let intervalId: number
   let isAutoplay = true
   let xPosition = 0
 
@@ -27,13 +27,13 @@
 
   const toggleAutoplay = () => (isAutoplay = !isAutoplay)
 
-  const startAutoPlay = (node, isAutoplay) => {
-    const play = () => (intervalId = setInterval(moveSlides, duration))
+  const startAutoPlay = (node: HTMLElement, isAutoplay: boolean) => {
+    const play = () => (intervalId = window.setInterval(moveSlides, duration))
 
     isAutoplay ? play() : stopAutoPlay()
 
     return {
-      update(isNewAutoplay) {
+      update(isNewAutoplay: boolean) {
         isNewAutoplay ? play() : stopAutoPlay()
       },
       destroy() {
@@ -47,10 +47,16 @@
     xPosition = 0
   }
 
-  const moveSlides = direction => {
+  const moveSlides = (direction: string) => {
     const isBack = direction === 'Back'
-    const scrollLeftOptions = { left: -innerWidth, behavior: 'smooth' }
-    const scrollRightOptions = { left: innerWidth, behavior: 'smooth' }
+    const scrollLeftOptions: ScrollToOptions = {
+      left: -innerWidth,
+      behavior: 'smooth',
+    }
+    const scrollRightOptions: ScrollToOptions = {
+      left: innerWidth,
+      behavior: 'smooth',
+    }
     const scrollToOptions = isBack ? scrollLeftOptions : scrollRightOptions
 
     const isEnd = () => xPosition === innerWidth * slides.length

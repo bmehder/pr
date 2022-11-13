@@ -42,8 +42,7 @@
     min-height: 120px;
   }
   input[type='submit'] {
-    /* color: white; */
-    /* background-color: var(--light); */
+    margin-top: 0.5rem;
     font-size: 1.25rem;
     border: none;
     cursor: pointer;
