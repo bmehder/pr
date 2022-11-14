@@ -12,8 +12,7 @@ const champions = {
 export function GET() {
   // return new Response(JSON.stringify(champions), { status: 200 })
   return {
-    body: JSON.stringify(champions),
-    status: 200,
+    body: { data: JSON.stringify(champions) },
   }
   // return json(champions)
 }
