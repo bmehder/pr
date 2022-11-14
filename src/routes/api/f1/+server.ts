@@ -10,6 +10,10 @@ const champions = {
 
 /** @type {import('./$types').RequestHandler} */
 export function GET() {
-  return new Response(JSON.stringify(champions), { status: 200 })
+  // return new Response(JSON.stringify(champions), { status: 200 })
+  return {
+    body: JSON.stringify(champions),
+    status: 200,
+  }
   // return json(champions)
 }
