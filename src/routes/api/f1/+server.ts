@@ -2,9 +2,9 @@ import { json } from '@sveltejs/kit'
 
 const champions = {
   data: [
-    { champ: 'Max Verstappen' },
-    { champ: 'Max Verstappen' },
-    { champ: 'Lewis Hamilton' },
+    { year: 2022, champ: 'Max Verstappen' },
+    { year: 2021, champ: 'Max Verstappen' },
+    { year: 2020, champ: 'Lewis Hamilton' },
   ],
 }
 
