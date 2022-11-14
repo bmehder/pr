@@ -1,4 +1,4 @@
-import { json } from '@sveltejs/kit'
+// import { json } from '@sveltejs/kit'
 
 const champions = {
   data: [
@@ -10,5 +10,6 @@ const champions = {
 
 /** @type {import('./$types').RequestHandler} */
 export function GET() {
-  return json(champions)
+  return new Response(JSON.stringify(champions))
+  // return json(champions)
 }
