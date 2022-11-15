@@ -7,12 +7,18 @@
 </svelte:head>
 
 <aside>
-  <!-- <Water --clr="var(--light)" --border="47% 53% 70% 30% / 30% 43% 57% 70%" /> -->
-  <!-- <Water --clr="var(--medium)" --border="61% 39% 52% 48% / 44% 59% 41% 56%" /> -->
-  <!-- <Water --clr="var(--dark)" --border="35% 65% 31% 69% / 57% 59% 41% 43%" /> -->
-  <Water --clr="var(--light)" --border="50%" />
-  <Water --clr="var(--medium)" --border="50%" />
-  <Water --clr="var(--dark)" --border="50%" />
+  <Water --clr="var(--light)" --border="47% 53% 70% 30% / 30% 43% 57% 70%">
+    <span slot="heading">01</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Water>
+  <Water --clr="var(--medium)" --border="61% 39% 52% 48% / 44% 59% 41% 56%">
+    <span slot="heading">02</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Water>
+  <Water --clr="var(--dark)" --border="35% 65% 31% 69% / 57% 59% 41% 43%">
+    <span slot="heading">03</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Water>
 </aside>
 
 <h2>Heading One</h2>

@@ -1,8 +1,8 @@
 <div class="drop">
   <div class="content">
-    <h2>01</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quos?</p>
-    <a href={'#'}>Read More</a>
+    <h2><slot name="heading">01</slot></h2>
+    <p><slot /></p>
+    <a href={'#'}><slot name="button">Read More</slot></a>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     color: var(--clr);
-    border-radius: var(--border);
+    border-radius: 50%;
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
       10px 10px 10px rgba(0, 0, 0, 0.05), 10px 10px 10px rgba(0, 0, 0, 0.05),
       inset -10px -10px 12px rgba(255, 255, 255, 0.9);
@@ -22,7 +22,7 @@
     overflow: hidden;
   }
   .drop:hover {
-    border-radius: 50%;
+    border-radius: var(--border);
     scale: 1.01;
     box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
       25px 35px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05),
