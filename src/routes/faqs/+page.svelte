@@ -16,7 +16,7 @@
   {#each data.faqs as category}
     <h2>{category.name}</h2>
     {#each category.faqs as faq}
-      <Faq {faq} --color="black" --background="#f1f1f1" />
+      <Faq {faq} --color="white" --background="#323232" />
     {/each}
   {/each}
 </div>

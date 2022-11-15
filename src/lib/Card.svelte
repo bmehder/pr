@@ -1,6 +1,4 @@
 <script lang="ts">
-  // import type { WP_REST_API_Post } from 'wp-types'
-
   type Post = {
     date: Date
     slug: string

@@ -35,9 +35,9 @@
 <footer>
   {#each { length: data.postsCount / 12 } as _, index}
     {#if index === 0}
-      <a href="/blog">{index + 1}</a>
+      <a href="/blog" data-sveltekit-prefetch>{index + 1}</a>
     {:else}
-      <a href="/blog/page/{index + 1}">{index + 1}</a>
+      <a href="/blog/page/{index + 1}" data-sveltekit-prefetch>{index + 1}</a>
     {/if}
   {/each}
 </footer>
@@ -64,8 +64,6 @@
     width: 100%;
   }
   button {
-    /* background-color: var(--light); */
-    /* color: white; */
     border: none;
   }
   .auto-grid {

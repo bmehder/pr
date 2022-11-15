@@ -23,9 +23,9 @@
   {#each { length: data.postsCount / 12 } as _, index}
     {@const pageNumber = index + 1}
     {#if pageNumber === 1}
-      <a href="/blog">{pageNumber}</a>
+      <a href="/blog" data-sveltekit-prefetch>{pageNumber}</a>
     {:else}
-      <a href="/blog/page/{pageNumber}">{pageNumber}</a>
+      <a href="/blog/page/{pageNumber}" data-sveltekit-prefetch>{pageNumber}</a>
     {/if}
   {/each}
 </div>

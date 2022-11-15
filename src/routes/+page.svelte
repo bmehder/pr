@@ -1,6 +1,19 @@
+<script>
+  import Water from '$lib/Water.svelte'
+</script>
+
 <svelte:head>
   <title>Home</title>
 </svelte:head>
+
+<aside>
+  <!-- <Water --clr="var(--light)" --border="47% 53% 70% 30% / 30% 43% 57% 70%" /> -->
+  <!-- <Water --clr="var(--medium)" --border="61% 39% 52% 48% / 44% 59% 41% 56%" /> -->
+  <!-- <Water --clr="var(--dark)" --border="35% 65% 31% 69% / 57% 59% 41% 43%" /> -->
+  <Water --clr="var(--light)" --border="50%" />
+  <Water --clr="var(--medium)" --border="50%" />
+  <Water --clr="var(--dark)" --border="50%" />
+</aside>
 
 <h2>Heading One</h2>
 <div>
@@ -68,6 +81,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+  }
+  aside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 3rem;
+    margin-block: 1.5rem 3rem;
   }
   .boxed-content {
     margin-top: 2.5rem;

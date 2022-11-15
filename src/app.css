@@ -3,7 +3,8 @@
   --medium: #e94057;
   --light: #f27121;
   --black: #222;
-  --white: rgba(255, 255, 255, 0.8);
+  /* --white: rgba(255, 255, 255, 0.8); */
+  --white: #eff0f4;
   --shadow: 0 10px 20px rgba(0,0,0,0.24);
 }
 
@@ -22,6 +23,7 @@ body {
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   inset: 0;
+  background-color: var(--white);
 }
 
 .dark {
