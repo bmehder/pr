@@ -19,4 +19,4 @@ const champions = {
   ],
 }
 
-export const GET = () => json(champions)
+export const GET = () => json(champions, { status: 200 })
