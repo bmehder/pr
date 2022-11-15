@@ -19,4 +19,4 @@ const champions = {
   ],
 }
 
-export const GET = () => json(JSON.stringify(champions), { status: 200 })
+export const GET = () => json(champions, { status: 200 })
