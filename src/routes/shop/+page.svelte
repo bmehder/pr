@@ -31,7 +31,7 @@
   $: if (!value) searchResults = null
 </script>
 
-<header class="search">
+<header>
   <h1>Shop</h1>
   <div>
     <div>
@@ -79,7 +79,7 @@
   header {
     display: flex;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-block: 1.5rem;
   }
   header > div {
     position: relative;
