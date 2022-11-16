@@ -1,7 +1,13 @@
 <script lang="ts">
   import { isOpen } from '$lib/Header/store'
+
   export let isAutoplay: boolean
+
+  const handleKeypress = (evt: KeyboardEvent) =>
+    evt.key === 'p' && (isAutoplay = !isAutoplay)
 </script>
+
+<svelte:window on:keypress={handleKeypress} />
 
 {#if !$isOpen}
   {#if isAutoplay}

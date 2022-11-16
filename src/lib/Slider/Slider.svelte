@@ -80,7 +80,7 @@
 <svelte:window bind:innerWidth on:keydown={handleKeydown} />
 
 <aside use:startAutoPlay={isAutoplay}>
-  <PausePlay on:click={toggleAutoplay} {isAutoplay} --width="2.5rem" />
+  <PausePlay on:click={toggleAutoplay} bind:isAutoplay --width="2.5rem" />
 
   <div bind:this={container}>
     {#each slides as { src, text, options: { top, left, transform } }}

@@ -112,4 +112,20 @@
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
   }
+  :global(.dark) .drop {
+    box-shadow: inset 10px 10px 10px rgba(255, 255, 255, 0.05),
+      10px 10px 10px rgba(255, 255, 255, 0.05),
+      10px 10px 10px rgba(255, 255, 255, 0.05),
+      inset -10px -10px 12px rgba(0, 0, 0, 0.9);
+  }
+  :global(.dark) h2 {
+    background-color: transparent;
+    box-shadow: 2px 5px 10px rgba(255, 255, 255, 0.1),
+      -2px -5px 10px rgba(0, 0, 0, 1), inset 15px 15px 10px rgba(255, 255, 255, 0.05),
+      inset 15px 15px 10px rgba(255, 255, 255, 0.025);
+  }
+  :global(.dark) .drop::before,
+  :global(.dark) .drop::after {
+    background-color: rgb(0, 0, 0, 0.4);
+  }
 </style>
