@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     color: var(--clr);
-    border-radius: 50%;
+    border-radius: var(--border);
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
       10px 10px 10px rgba(0, 0, 0, 0.05), 10px 10px 10px rgba(0, 0, 0, 0.05),
       inset -10px -10px 12px rgba(255, 255, 255, 0.9);
@@ -22,8 +22,8 @@
     overflow: hidden;
   }
   .drop:hover {
-    border-radius: var(--border);
-    scale: 1.01;
+    border-radius: 50%;
+    scale: 1.05;
     box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
       25px 35px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05),
       inset -20px -20px 25px rgba(255, 255, 255, 0.9);

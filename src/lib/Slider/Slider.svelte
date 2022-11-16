@@ -98,9 +98,9 @@
 </aside>
 
 <style>
-  :global(.dark) aside {
+  /* :global(.dark) aside {
     display: none;
-  }
+  } */
   aside {
     position: relative;
   }
@@ -118,7 +118,6 @@
     display: block;
     scroll-snap-align: start;
     object-fit: cover;
-    transform: rotateY(180deg);
   }
   article {
     position: relative;
@@ -148,7 +147,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: background-pan 8s linear infinite;
+    animation: background-pan 32s linear infinite;
   }
   @keyframes background-pan {
     from {

@@ -70,24 +70,24 @@ export async function load({ fetch }: RequestEvent) {
 
     const slides: Slide[] = [
       {
-        src: 'img/plant.png',
+        src: 'img/slider1.jpg',
         text: 'Hello <br /> Slider 1',
         options: { top: '50%', left: '25%' },
       },
       {
-        src: 'img/plant2.png',
-        text: 'Hello <br /> Slider 2',
-        options: { top: '50%', left: '29%' },
+        src: 'img/slider2.jpg',
+        text: 'Hello Slider 2',
+        options: { top: '50%', left: '42%' },
       },
       {
-        src: 'img/plant3.png',
-        text: 'Hello <br /> Slider 3',
-        options: { top: '50%', left: '26%' },
+        src: 'img/slider3.jpg',
+        text: 'Hello Slider 3',
+        options: { top: '50%', left: '50%' },
       },
       {
-        src: 'img/plant4.png',
+        src: 'img/slider4.jpg',
         text: 'Hello <br /> Slider 4',
-        options: { top: '50%', left: '64%' },
+        options: { top: '50%', left: '77%' },
       },
     ]
     return slides

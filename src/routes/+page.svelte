@@ -6,21 +6,6 @@
   <title>Home</title>
 </svelte:head>
 
-<aside>
-  <Water --clr="var(--light)" --border="47% 53% 70% 30% / 30% 43% 57% 70%">
-    <span slot="heading">01</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  </Water>
-  <Water --clr="var(--medium)" --border="61% 39% 52% 48% / 44% 59% 41% 56%">
-    <span slot="heading">02</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  </Water>
-  <Water --clr="var(--dark)" --border="35% 65% 31% 69% / 57% 59% 41% 43%">
-    <span slot="heading">03</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  </Water>
-</aside>
-
 <h2>Heading One</h2>
 <div>
   <p>
@@ -49,7 +34,22 @@
   </p>
 </div>
 
-<div class="boxed-content">
+<aside>
+  <Water --clr="var(--light)" --border="50% 60% 70% 50% / 36% 43% 59% 69%">
+    <span slot="heading">01</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Water>
+  <Water --clr="var(--medium)" --border="61% 39% 52% 48% / 44% 59% 41% 56%">
+    <span slot="heading">02</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Water>
+  <Water --clr="var(--dark)" --border="35% 65% 31% 69% / 57% 59% 41% 43%">
+    <span slot="heading">03</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Water>
+</aside>
+
+<!-- <div class="boxed-content">
   <h2>Ex Sed Recusandae!</h2>
   <div>
     <p>
@@ -60,9 +60,9 @@
       eaque, id cupiditate autem eos, veritatis tenetur?
       <button>Learn More</button>
     </p>
-    <img src="img/plant2.png" alt="" />
+    <img src="img/slider4.jpg" alt="" />
   </div>
-</div>
+</div> -->
 
 <h2>Heading Three</h2>
 <p>
@@ -83,7 +83,7 @@
 </p>
 
 <style>
-  div:not(.boxed-content) {
+  div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -92,61 +92,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 3rem;
-    margin-block: 1.5rem 3rem;
-  }
-  .boxed-content {
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
-    padding: 4rem;
-    background-color: var(--dark);
-    color: white;
-    font-size: 1.25rem;
-    overflow: hidden;
-  }
-  .boxed-content h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-  }
-  img {
-    width: 100%;
-    margin-top: -2rem;
-    aspect-ratio: 1;
-    object-fit: cover;
-    object-position: left;
-    border-radius: 2px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
-  }
-  button {
-    display: block;
-    margin-top: 2.5rem;
-    padding: 1rem 2rem;
-    background-color: var(--light);
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 2px solid var(--light);
-    border-radius: 2px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: transparent;
-    border: 2px solid white;
-    box-shadow: none;
+    margin-block: 3rem;
   }
   @media screen and (max-width: 700px) {
     div {
       display: flex !important;
       flex-direction: column;
       gap: 0 !important;
-    }
-    img {
-      display: none;
-    }
-    .boxed-content {
-      padding: 2rem;
     }
   }
 </style>
