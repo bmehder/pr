@@ -79,7 +79,7 @@
   }
   a {
     padding: 0.5rem 1rem;
-    background-color: #eee;
+    background-color: #fff;
     font-weight: bold;
   }
   @media screen and (max-width: 768px) {

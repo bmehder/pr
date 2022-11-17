@@ -16,13 +16,12 @@
   const getSearchResults = async (value: string) => {
     if (!value) return
 
-    searchResults = null
-
     const res = await fetch(
       `https://dummyjson.com/products/search?q=${value}&limit=100`
     )
     const results = await res.json()
 
+    searchResults = null
     searchResults = results
   }
 
