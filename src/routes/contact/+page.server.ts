@@ -1,6 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit'
 
-export const prerender = false
+export const prerender = true
 
 /** @type {import('./$types').Actions} */
 export const actions = {
