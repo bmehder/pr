@@ -10,13 +10,13 @@
 
   const closeModal = (element: HTMLDialogElement) => {
     const callback = (event: MouseEvent) => {
-      const dialogElement = element.getBoundingClientRect()
+      const box = element.getBoundingClientRect()
 
       const isInDialog =
-        dialogElement.top <= event.clientY &&
-        event.clientY <= dialogElement.top + dialogElement.height &&
-        dialogElement.left <= event.clientX &&
-        event.clientX <= dialogElement.left + dialogElement.width
+        box.top <= event.clientY &&
+        event.clientY <= box.top + box.height &&
+        box.left <= event.clientX &&
+        event.clientX <= box.left + box.width
 
       if (!isInDialog) {
         element.close()
@@ -42,7 +42,12 @@
     selected = null
     dialogElem?.close()
   }
+
+  const handleDialogCloseWithEscapeKey = (evt: KeyboardEvent) =>
+    evt.key === 'Escape' && handleCloseButton()
 </script>
+
+<svelte:window on:keydown={handleDialogCloseWithEscapeKey} />
 
 <h1>Reviews</h1>
 
