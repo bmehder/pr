@@ -9,17 +9,14 @@
 </script>
 
 <h1>{categoryName}</h1>
-<div class="auto-grid">
+<div class="grid auto-grid">
   {#each data.items.products as product}
     <ProductCard {product} />
   {/each}
 </div>
 
 <style>
-  .auto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-    gap: 3rem;
+  div {
     margin-top: 1.5rem;
   }
 </style>

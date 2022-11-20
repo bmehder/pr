@@ -26,7 +26,7 @@
   </form>
 </header>
 
-<section class="auto-grid">
+<section class="grid auto-grid">
   {#each data.posts as item}
     <Card {item} />
   {/each}
@@ -67,9 +67,6 @@
     border: none;
   }
   .auto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-    gap: 3rem;
     margin-block: 2rem;
   }
   footer {

@@ -11,17 +11,14 @@
 </svelte:head>
 
 <h1>Category - {data.categoryName}</h1>
-<section class="auto-grid">
+<section class="grid auto-grid">
   {#each data.items as item}
     <Card {item} />
   {/each}
 </section>
 
 <style>
-  .auto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-    gap: 3rem;
+  section {
     margin-block: 2rem;
   }
 </style>

@@ -6,8 +6,14 @@
 </script>
 
 <h1>Team Members</h1>
-<div class="auto-grid">
+<div class="grid auto-grid">
   {#each data.members as member}
     <Member {member} />
   {/each}
 </div>
+
+<style>
+  div {
+    margin-block: 2rem;
+  }
+</style>

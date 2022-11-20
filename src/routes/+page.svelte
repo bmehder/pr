@@ -27,7 +27,7 @@
 </div>
 
 <h2>Two Columns</h2>
-<div class="auto-col">
+<div class="grid auto-col">
   <p>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit
     corrupti rerum fugit vero optio veritatis qui velit. Est quis facilis voluptatum,
@@ -55,7 +55,7 @@
 </div>
 
 <h2>Water Cardsv</h2>
-<aside class="auto-col water">
+<aside class="grid auto-grid water">
   <Water --clr="var(--light)" --border="50% 60% 70% 50% / 36% 43% 59% 69%">
     <svelte:fragment slot="heading">32</svelte:fragment>
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -74,7 +74,7 @@
 </aside>
 
 <h2>Three Columns</h2>
-<div class="auto-col">
+<div class="grid auto-col">
   <p>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit
     corrupti rerum fugit vero optio veritatis qui velit. Est quis facilis voluptatum,
@@ -99,7 +99,7 @@
 </div>
 
 <h2>Four Columns</h2>
-<div class="auto-col">
+<div class="grid auto-col">
   <p>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit
     corrupti rerum fugit vero optio veritatis qui velit. Est quis facilis voluptatum,

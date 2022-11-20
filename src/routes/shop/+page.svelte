@@ -68,7 +68,7 @@
     </div>
   </div>
 </header>
-<div class="auto-grid" class:blur={value}>
+<div class="grid auto-grid" class:blur={value}>
   {#each data.items.products as product}
     <ProductCard {product} />
   {/each}

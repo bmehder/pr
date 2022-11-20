@@ -19,7 +19,7 @@
   <hr />
 </details>
 
-<div>
+<div class="grid">
   {#each data.careers as career}
     <Career {career} />
   {/each}
@@ -27,8 +27,6 @@
 
 <style>
   div {
-    display: grid;
-    gap: 2rem;
     margin-block: 2rem;
   }
   p {
