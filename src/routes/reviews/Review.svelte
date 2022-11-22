@@ -18,7 +18,7 @@
   export let review: Review
   export let isSingle = false
 
-  const stars = Array(+review._bd_reviews_rating)
+  const stars: null[] = Array(+review._bd_reviews_rating)
   const excerpt = review.excerpt.rendered
   const content = review.content.rendered
   const citation = review.title.rendered
@@ -39,7 +39,7 @@
   {:else}
     {@html excerpt}
   {/if}
-  <cite>{citation}<br /><time>{date}</time> </cite>
+  <cite>{citation}<br /><time>{date}</time></cite>
 </blockquote>
 
 <style>

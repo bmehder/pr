@@ -83,7 +83,7 @@
   <PausePlay on:click={toggleAutoplay} bind:isAutoplay --width="2.5rem" />
 
   <div bind:this={container}>
-    {#each slides as { src, text, options: { top, left, transform } }}
+    {#each slides as { src, text, options: { top, left } }}
       <article>
         <img {src} alt="" />
         <h2 style="top: {top}; left: {left};">
@@ -98,9 +98,6 @@
 </aside>
 
 <style>
-  /* :global(.dark) aside {
-    display: none;
-  } */
   aside {
     position: relative;
   }
@@ -125,8 +122,6 @@
   }
   h2 {
     position: absolute;
-    /* top: 50%;
-    left: 50%; */
     margin: 0;
     color: var(--dark);
     font-size: 10vw;

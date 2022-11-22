@@ -74,7 +74,7 @@ button, input[type='submit'] {
   color: white
 }
 
-sup {
+sup, sub {
   line-height: 0;
 }
 
@@ -96,4 +96,12 @@ sup {
     grid-auto-flow: unset;
     gap: 0;
   }
+}
+
+.clamp {
+  --max-lines: 4;
+  --line-height: 1.4;
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
 }

@@ -1,12 +1,24 @@
 <script lang="ts">
-  import type { ActionData } from './$types'
+  import type { ActionData, PageData } from './$types'
   import { isSubmittingForm } from './store'
 
   import Form from './Form.svelte'
+  import Refresh from './Refresh.svelte'
 
   export let form: ActionData
+  export let data: PageData
+
+  let newQuote: { quote: string; author: string }
 
   $: form?.results && ($isSubmittingForm = false)
+
+  const getQuote = async () => {
+    const response = await fetch('https://dummyjson.com/quotes/random')
+    const quote = await response.json()
+
+    newQuote = quote
+  }
+  console.log(data)
 </script>
 
 <svelte:head>
@@ -45,6 +57,10 @@
     <li><i class="fa-brands fa-2x fa-linkedin" /></li>
     <li><i class="fa-brands fa-2x fa-instagram" /></li>
   </ul>
+  <h2>Quote of the Day <Refresh on:click={getQuote} on:keypress /></h2>
+
+  <blockquote>"{newQuote?.quote ?? data.quote.quote}"</blockquote>
+  <cite>– {newQuote?.author ?? data.quote.author}</cite>
 </div>
 
 <style>
@@ -60,6 +76,17 @@
   }
   .fa-brands:hover {
     color: var(--light) !important;
+  }
+  blockquote {
+    margin-top: 1.5rem;
+    line-height: 1.5rem;
+    font-style: italic;
+  }
+  cite {
+    display: block;
+    margin-top: 1rem;
+    text-align: right;
+    font-style: normal;
   }
   :global(body.dark) .fa-brands {
     color: white;

@@ -1,7 +1,15 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
   import { isSubmittingForm } from './store'
+  import Loading from './Loading.svelte'
 </script>
+
+{#if $isSubmittingForm}
+  <div>
+    <p>The form is submitting.</p>
+    <p><Loading /></p>
+  </div>
+{/if}
 
 <form method="POST" use:enhance>
   <h2>Send a message</h2>
