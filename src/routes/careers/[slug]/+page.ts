@@ -7,5 +7,8 @@ export async function load({ fetch, params }: RequestEvent) {
   const response = await fetch(BASE_URL + `career?slug=${params.slug}`)
   const career = await response.json()
 
-  return { career }
+  const catsResponse = await fetch(BASE_URL + 'career-cats')
+  const careerCats = await catsResponse.json()
+
+  return { career, careerCats }
 }

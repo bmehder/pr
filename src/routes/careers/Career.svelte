@@ -7,12 +7,19 @@
     excerpt: {
       rendered: string
     }
+    'career-cats': []
   }
   export let career: Career
+  export let cats
+
+  const category = career['career-cats']
+  const catName = cats.find(cat => cat.id === category[0])
 </script>
 
 <article>
-  <h2><a href="/careers/{career.slug}">{career.title.rendered}</a></h2>
+  <h2>
+    <a href="/careers/{career.slug}">{career.title.rendered} ({catName.name})</a>
+  </h2>
   <p>{@html career.excerpt.rendered}</p>
   <a class="button" href="/careers/{career.slug}">View Details</a>
 </article>

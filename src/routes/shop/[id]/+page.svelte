@@ -21,13 +21,19 @@
 
 <section>
   <h1>{title}</h1>
-  <img src={thumbnail} alt="" />
-  <div>
-    <div class="header">
-      <button>Buy Now</button>
-      <h2 class="price">{Format.toDollars(price)}</h2>
+  <div class="header">
+    <img src={thumbnail} alt="" />
+    <div>
+      <div>
+        <h2 class="price">{Format.toDollars(price)}</h2>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" value="1" />
+        <a href={'#'} class="button">Buy Now</a>
+      </div>
     </div>
   </div>
+  <h3>Description</h3>
+  <p>{description}</p>
   <div class="meta">
     <div>
       <h3>Brand</h3>
@@ -52,50 +58,60 @@
       <p>{id}</p>
     </div>
   </div>
-  <h3>Description</h3>
-  <p>{description}</p>
 </section>
 
 <style>
   img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 1;
     object-fit: cover;
-    margin-block: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24); */
   }
   .header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+    gap: 3rem;
+    margin-block: 1.5rem 2rem;
+  }
+  .header div {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: start;
+    align-self: start;
+    margin-top: 0.5rem;
+  }
+  label {
+    font-weight: bold;
+  }
+  input {
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
   }
   .meta {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: column;
     gap: 1rem;
+    margin-block: 1.5rem;
+    padding: 1rem;
+    background-color: white;
+    overflow: hidden;
   }
-  .meta div {
-    display: block;
+  .meta h3,
+  .meta p {
+    margin: 0;
   }
   .price {
     margin: 0;
     color: var(--light);
   }
-  button {
-    padding: 1rem 2rem;
-    background-color: var(--light);
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: scale 100ms ease-in-out;
+  .button {
+    display: grid;
+    place-content: center;
+    margin-block: 0;
   }
-  button:hover {
-    scale: 0.95;
-  }
-  p {
-    margin-top: 0.5rem;
-  }
+
   @media screen and (max-width: 720px) {
     .header {
       display: block;
