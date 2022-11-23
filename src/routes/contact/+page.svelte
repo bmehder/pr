@@ -18,7 +18,6 @@
 
     newQuote = quote
   }
-  console.log(data)
 </script>
 
 <svelte:head>
@@ -41,12 +40,12 @@
   <Form />
 {/if}
 
-<div>
+<aside>
   <h2>Company Info</h2>
   <p>
     Mr. Tom Foolery<br />
     1600 Shenanigans Ln<br />
-    New York, NY 10032<br />
+    New York, NY 10032
   </p>
   <h2>Phone</h2>
   <p><a href="tel:+18608675309">+1 (860) 867-5309</a></p>
@@ -61,7 +60,7 @@
 
   <blockquote>"{newQuote?.quote ?? data.quote.quote}"</blockquote>
   <cite>– {newQuote?.author ?? data.quote.author}</cite>
-</div>
+</aside>
 
 <style>
   ul {
